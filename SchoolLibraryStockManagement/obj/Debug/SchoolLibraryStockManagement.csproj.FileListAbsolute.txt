@@ -1,0 +1,15 @@
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe.config
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.pdb
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Properties.Resources.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.GenerateResource.Cache
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojResolveAssemblyReference.cache
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Category.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Product.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.User.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagement.resources
