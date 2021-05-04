@@ -6,10 +6,10 @@ C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStock
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojResolveAssemblyReference.cache
-C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Category.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
-C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Product.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
-C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.User.resources
-C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagement.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.CategoryForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagementForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.UserForm.resources

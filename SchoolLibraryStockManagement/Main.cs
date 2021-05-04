@@ -24,27 +24,27 @@ namespace SchoolLibraryStockManagement
 
         private void lbl_products_Click(object sender, EventArgs e)
         {
-            new Product().ShowDialog();
+            new ProductForm().ShowDialog();
         }
 
         private void lbl_categories_Click(object sender, EventArgs e)
         {
-            new Category().ShowDialog();
+            new CategoryForm().ShowDialog();
         }
 
         private void lbl_users_Click(object sender, EventArgs e)
         {
-            new User().ShowDialog();
+            new UserForm().ShowDialog();
         }
 
         private void lbl_orders_Click(object sender, EventArgs e)
         {
-            new Order().ShowDialog();
+            new OrderForm().ShowDialog();
         }
 
         private void lbl_reports_Click(object sender, EventArgs e)
         {
-            new Report().ShowDialog();
+            new ReportForm().ShowDialog();
         }
 
         private void lbl_settings_Click(object sender, EventArgs e)

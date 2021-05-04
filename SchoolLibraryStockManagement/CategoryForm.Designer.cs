@@ -1,6 +1,6 @@
 ﻿namespace SchoolLibraryStockManagement
 {
-    partial class Category
+    partial class CategoryForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SchoolLibraryStockManagement
 {
-    public partial class Order : Form
+    public partial class ReportForm : Form
     {
-        public Order()
+        public ReportForm()
         {
             InitializeComponent();
         }

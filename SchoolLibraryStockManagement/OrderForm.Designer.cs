@@ -1,6 +1,6 @@
 ﻿namespace SchoolLibraryStockManagement
 {
-    partial class Order
+    partial class OrderForm
     {
         /// <summary>
         /// Required designer variable.

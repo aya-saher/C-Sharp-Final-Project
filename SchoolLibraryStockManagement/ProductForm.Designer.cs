@@ -1,6 +1,6 @@
 ﻿namespace SchoolLibraryStockManagement
 {
-    partial class Product
+    partial class ProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_edir = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.lbl_category = new System.Windows.Forms.Label();
             this.txt_description = new System.Windows.Forms.TextBox();
@@ -40,10 +40,15 @@
             this.lbl_code = new System.Windows.Forms.Label();
             this.dgv_products = new System.Windows.Forms.DataGridView();
             this.cmb_categories = new System.Windows.Forms.ComboBox();
-            this.btn_stock_management = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.cmb_columns = new System.Windows.Forms.ComboBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.btn_add_category = new System.Windows.Forms.Button();
+            this.txt_quantity = new System.Windows.Forms.TextBox();
+            this.lbl_quantity = new System.Windows.Forms.Label();
+            this.txt_price = new System.Windows.Forms.TextBox();
+            this.lbl_price = new System.Windows.Forms.Label();
+            this.btn_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,15 +60,17 @@
             this.btn_delete.TabIndex = 24;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // btn_edir
+            // btn_edit
             // 
-            this.btn_edir.Location = new System.Drawing.Point(211, 100);
-            this.btn_edir.Name = "btn_edir";
-            this.btn_edir.Size = new System.Drawing.Size(91, 23);
-            this.btn_edir.TabIndex = 23;
-            this.btn_edir.Text = "Edit";
-            this.btn_edir.UseVisualStyleBackColor = true;
+            this.btn_edit.Location = new System.Drawing.Point(211, 100);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(91, 23);
+            this.btn_edit.TabIndex = 23;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_add
             // 
@@ -73,11 +80,12 @@
             this.btn_add.TabIndex = 22;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // lbl_category
             // 
             this.lbl_category.AutoSize = true;
-            this.lbl_category.Location = new System.Drawing.Point(24, 176);
+            this.lbl_category.Location = new System.Drawing.Point(24, 247);
             this.lbl_category.Name = "lbl_category";
             this.lbl_category.Size = new System.Drawing.Size(49, 13);
             this.lbl_category.TabIndex = 20;
@@ -138,24 +146,15 @@
             this.dgv_products.Name = "dgv_products";
             this.dgv_products.Size = new System.Drawing.Size(364, 147);
             this.dgv_products.TabIndex = 13;
+            this.dgv_products.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_products_CellMouseDoubleClick);
             // 
             // cmb_categories
             // 
             this.cmb_categories.FormattingEnabled = true;
-            this.cmb_categories.Location = new System.Drawing.Point(84, 171);
+            this.cmb_categories.Location = new System.Drawing.Point(84, 242);
             this.cmb_categories.Name = "cmb_categories";
             this.cmb_categories.Size = new System.Drawing.Size(100, 21);
             this.cmb_categories.TabIndex = 26;
-            // 
-            // btn_stock_management
-            // 
-            this.btn_stock_management.Location = new System.Drawing.Point(211, 169);
-            this.btn_stock_management.Name = "btn_stock_management";
-            this.btn_stock_management.Size = new System.Drawing.Size(91, 23);
-            this.btn_stock_management.TabIndex = 27;
-            this.btn_stock_management.Text = "Stock Manag.";
-            this.btn_stock_management.UseVisualStyleBackColor = true;
-            this.btn_stock_management.Click += new System.EventHandler(this.btn_stock_management_Click);
             // 
             // txt_search
             // 
@@ -180,19 +179,77 @@
             this.btn_search.TabIndex = 30;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // Product
+            // btn_add_category
+            // 
+            this.btn_add_category.Location = new System.Drawing.Point(190, 242);
+            this.btn_add_category.Name = "btn_add_category";
+            this.btn_add_category.Size = new System.Drawing.Size(25, 23);
+            this.btn_add_category.TabIndex = 31;
+            this.btn_add_category.Text = "+";
+            this.btn_add_category.UseVisualStyleBackColor = true;
+            this.btn_add_category.Click += new System.EventHandler(this.btn_add_category_Click);
+            // 
+            // txt_quantity
+            // 
+            this.txt_quantity.Location = new System.Drawing.Point(84, 207);
+            this.txt_quantity.Name = "txt_quantity";
+            this.txt_quantity.Size = new System.Drawing.Size(100, 20);
+            this.txt_quantity.TabIndex = 35;
+            // 
+            // lbl_quantity
+            // 
+            this.lbl_quantity.AutoSize = true;
+            this.lbl_quantity.Location = new System.Drawing.Point(24, 210);
+            this.lbl_quantity.Name = "lbl_quantity";
+            this.lbl_quantity.Size = new System.Drawing.Size(46, 13);
+            this.lbl_quantity.TabIndex = 34;
+            this.lbl_quantity.Text = "Quantity";
+            // 
+            // txt_price
+            // 
+            this.txt_price.Location = new System.Drawing.Point(84, 172);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.Size = new System.Drawing.Size(100, 20);
+            this.txt_price.TabIndex = 33;
+            // 
+            // lbl_price
+            // 
+            this.lbl_price.AutoSize = true;
+            this.lbl_price.Location = new System.Drawing.Point(24, 175);
+            this.lbl_price.Name = "lbl_price";
+            this.lbl_price.Size = new System.Drawing.Size(31, 13);
+            this.lbl_price.TabIndex = 32;
+            this.lbl_price.Text = "Price";
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(211, 170);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(91, 23);
+            this.btn_clear.TabIndex = 36;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 236);
+            this.ClientSize = new System.Drawing.Size(742, 289);
+            this.Controls.Add(this.btn_clear);
+            this.Controls.Add(this.txt_quantity);
+            this.Controls.Add(this.lbl_quantity);
+            this.Controls.Add(this.txt_price);
+            this.Controls.Add(this.lbl_price);
+            this.Controls.Add(this.btn_add_category);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.btn_stock_management);
             this.Controls.Add(this.cmb_categories);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_edir);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_category);
             this.Controls.Add(this.txt_description);
@@ -202,8 +259,9 @@
             this.Controls.Add(this.txt_code);
             this.Controls.Add(this.lbl_code);
             this.Controls.Add(this.dgv_products);
-            this.Name = "Product";
+            this.Name = "ProductForm";
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,7 +271,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button btn_edir;
+        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Label lbl_category;
         private System.Windows.Forms.TextBox txt_description;
@@ -224,9 +282,14 @@
         private System.Windows.Forms.Label lbl_code;
         private System.Windows.Forms.DataGridView dgv_products;
         private System.Windows.Forms.ComboBox cmb_categories;
-        private System.Windows.Forms.Button btn_stock_management;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.ComboBox cmb_columns;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_add_category;
+        private System.Windows.Forms.TextBox txt_quantity;
+        private System.Windows.Forms.Label lbl_quantity;
+        private System.Windows.Forms.TextBox txt_price;
+        private System.Windows.Forms.Label lbl_price;
+        private System.Windows.Forms.Button btn_clear;
     }
 }

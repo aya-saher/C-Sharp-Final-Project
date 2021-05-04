@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SchoolLibraryStockManagement
 {
-    public partial class Product : Form
+    public partial class StockManagementForm : Form
     {
-        public Product()
+        public StockManagementForm()
         {
             InitializeComponent();
-        }
-
-        private void btn_stock_management_Click(object sender, EventArgs e)
-        {
-            new StockManagement().ShowDialog();
         }
     }
 }

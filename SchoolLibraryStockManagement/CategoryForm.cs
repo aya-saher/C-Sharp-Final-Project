@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SchoolLibraryStockManagement
 {
-    public partial class Category : Form
+    public partial class CategoryForm : Form
     {
-        public Category()
+        public CategoryForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace SchoolLibraryStockManagement
 {
-    partial class User
+    partial class UserForm
     {
         /// <summary>
         /// Required designer variable.

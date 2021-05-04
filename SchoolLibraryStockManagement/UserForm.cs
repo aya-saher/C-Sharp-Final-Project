@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SchoolLibraryStockManagement
 {
-    public partial class Report : Form
+    public partial class UserForm : Form
     {
-        public Report()
+        public UserForm()
         {
             InitializeComponent();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

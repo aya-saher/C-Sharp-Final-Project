@@ -52,5 +52,45 @@ namespace SchoolLibraryStockManagement.Libraries
                 command.Connection.Close();
             }
         }
+
+        public static void update(string query)
+        {
+            DbCommand command = DatabaseConnection.getConnection();
+            command.CommandText = query;
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public static void delete(string query)
+        {
+            DbCommand command = DatabaseConnection.getConnection();
+            command.CommandText = query;
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
     }
 }
