@@ -82,11 +82,23 @@
     <Compile Include="OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OutofStockReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutofStockReportForm.Designer.cs">
+      <DependentUpon>OutofStockReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMovementReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductMovementReportForm.Designer.cs">
+      <DependentUpon>ProductMovementReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +120,12 @@
     <Compile Include="StockManagementForm.Designer.cs">
       <DependentUpon>StockManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TopSellingReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopSellingReportForm.Designer.cs">
+      <DependentUpon>TopSellingReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,8 +141,14 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OutofStockReportForm.resx">
+      <DependentUpon>OutofStockReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductMovementReportForm.resx">
+      <DependentUpon>ProductMovementReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,11 +159,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockManagementForm.resx">
       <DependentUpon>StockManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopSellingReportForm.resx">
+      <DependentUpon>TopSellingReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

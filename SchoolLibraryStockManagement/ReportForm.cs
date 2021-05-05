@@ -16,5 +16,33 @@ namespace SchoolLibraryStockManagement
         {
             InitializeComponent();
         }
+
+        private void lbl_product_movement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ProductMovementReportForm().ShowDialog();
+            this.Close();
+        }
+
+        private void lbl_out_of_stock_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new OutofStockReportForm().ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TopSellingReportForm().ShowDialog();
+            this.Close();
+        }
+
+        private void lbl_top_selling_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TopSellingReportForm().ShowDialog();
+            this.Close();
+        }
     }
 }

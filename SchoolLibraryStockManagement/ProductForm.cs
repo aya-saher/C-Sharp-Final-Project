@@ -69,7 +69,6 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                Console.WriteLine(new Product().search(cmb_columns.SelectedItem.ToString(), txt_search.Text));
                 dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Product().search((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
             }
             else

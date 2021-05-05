@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 08:00 AM
+-- Generation Time: May 05, 2021 at 08:48 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -56,6 +56,13 @@ CREATE TABLE `orders` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `reference_number`, `total`, `user_id`, `created_at`) VALUES
+(1, 54545454, 100, 1, '2021-05-05 06:28:15');
+
 -- --------------------------------------------------------
 
 --
@@ -71,13 +78,22 @@ CREATE TABLE `order_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
+(3, 1, 8, 0, 0),
+(4, 1, 3, 2, 0),
+(5, 1, 3, 2, 0);
+
+--
 -- Triggers `order_items`
 --
 DELIMITER $$
 CREATE TRIGGER `stock_history` AFTER INSERT ON `order_items` FOR EACH ROW BEGIN
-DECLARE user_id INT;
-SET user_id = (SELECT user_id FROM orders WHERE id = NEW.order_id);
-INSERT INTO stock_history(product_id, quantity, type, user_id) VALUES (NEW.product_id, NEW.quantity, "substract", user_id);
+DECLARE order_user_id INT;
+SET order_user_id = (SELECT user_id FROM orders WHERE id = NEW.order_id);
+INSERT INTO stock_history(product_id, quantity, type, user_id) VALUES (NEW.product_id, NEW.quantity, "substract", order_user_id);
 END
 $$
 DELIMITER ;
@@ -104,10 +120,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `quantity`, `price`, `category_id`, `deleted_at`) VALUES
-(1, '12345', 'Product 1', '', 20, 5, 1, NULL),
+(1, '12345', 'Product 1', '', 0, 5, 1, NULL),
 (2, '544554', 'Product 2', '', 20, 10, 2, '0000-00-00 00:00:00'),
-(3, '98765', 'Product 3', '', 34, 22, 1, NULL),
-(8, '111', 'jhj5', '', 78, 55, 1, NULL),
+(3, '98765', 'Product 3', '', 30, 22, 1, NULL),
+(8, '111', 'jhj5', '', 0, 55, 1, NULL),
 (9, '111', 'sds', '', 1, 0, 1, NULL);
 
 -- --------------------------------------------------------
@@ -132,7 +148,10 @@ CREATE TABLE `stock_history` (
 INSERT INTO `stock_history` (`id`, `product_id`, `quantity`, `user_id`, `type`, `created_at`) VALUES
 (5, 9, 1, 1, 'added', '2021-05-05 05:28:17'),
 (6, 3, 1, 1, 'added', '2021-05-05 05:28:17'),
-(7, 1, 10, 1, 'added', '2021-05-05 05:30:27');
+(7, 1, 10, 1, 'added', '2021-05-05 05:30:27'),
+(8, 8, 0, 1, '', '2021-05-05 06:31:37'),
+(9, 3, 2, 1, '', '2021-05-05 06:31:57'),
+(10, 3, 2, 1, '', '2021-05-05 06:31:57');
 
 --
 -- Triggers `stock_history`
@@ -235,13 +254,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -253,7 +272,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `stock_history`
 --
 ALTER TABLE `stock_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
