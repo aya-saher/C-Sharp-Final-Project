@@ -16,5 +16,12 @@ namespace SchoolLibraryStockManagement
         {
             InitializeComponent();
         }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Main().ShowDialog();
+            this.Close();
+        }
     }
 }

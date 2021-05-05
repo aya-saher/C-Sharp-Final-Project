@@ -19,7 +19,9 @@ namespace SchoolLibraryStockManagement
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
+            this.Hide();
             new Login().ShowDialog();
+            this.Close();
         }
 
         private void lbl_products_Click(object sender, EventArgs e)
@@ -48,6 +50,11 @@ namespace SchoolLibraryStockManagement
         }
 
         private void lbl_settings_Click(object sender, EventArgs e)
+        {
+            new StockManagementForm().ShowDialog();
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
         {
             new Settings().ShowDialog();
         }

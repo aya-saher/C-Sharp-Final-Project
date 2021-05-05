@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2021 at 12:55 AM
+-- Generation Time: May 05, 2021 at 08:00 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -70,6 +70,18 @@ CREATE TABLE `order_items` (
   `price` float NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Triggers `order_items`
+--
+DELIMITER $$
+CREATE TRIGGER `stock_history` AFTER INSERT ON `order_items` FOR EACH ROW BEGIN
+DECLARE user_id INT;
+SET user_id = (SELECT user_id FROM orders WHERE id = NEW.order_id);
+INSERT INTO stock_history(product_id, quantity, type, user_id) VALUES (NEW.product_id, NEW.quantity, "substract", user_id);
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -92,8 +104,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `quantity`, `price`, `category_id`, `deleted_at`) VALUES
-(1, '12345', 'Product 1', '', 10, 5, 1, NULL),
-(2, '67890', 'Product 2', '', 20, 10, 2, NULL);
+(1, '12345', 'Product 1', '', 20, 5, 1, NULL),
+(2, '544554', 'Product 2', '', 20, 10, 2, '0000-00-00 00:00:00'),
+(3, '98765', 'Product 3', '', 34, 22, 1, NULL),
+(8, '111', 'jhj5', '', 78, 55, 1, NULL),
+(9, '111', 'sds', '', 1, 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -110,6 +125,33 @@ CREATE TABLE `stock_history` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `stock_history`
+--
+
+INSERT INTO `stock_history` (`id`, `product_id`, `quantity`, `user_id`, `type`, `created_at`) VALUES
+(5, 9, 1, 1, 'added', '2021-05-05 05:28:17'),
+(6, 3, 1, 1, 'added', '2021-05-05 05:28:17'),
+(7, 1, 10, 1, 'added', '2021-05-05 05:30:27');
+
+--
+-- Triggers `stock_history`
+--
+DELIMITER $$
+CREATE TRIGGER `update_product_quantity` AFTER INSERT ON `stock_history` FOR EACH ROW BEGIN
+DECLARE current_quantity INT;
+
+SET current_quantity = (SELECT quantity FROM products WHERE id = NEW.product_id);
+
+IF(NEW.type LIKE "added") THEN
+UPDATE products SET quantity = (current_quantity + NEW.quantity) WHERE id = NEW.product_id;
+ELSE
+UPDATE products SET quantity = (current_quantity - NEW.quantity) WHERE id = NEW.product_id;
+END IF;
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +167,13 @@ CREATE TABLE `users` (
   `activated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `name`, `password`, `role`, `activated_at`, `deleted_at`) VALUES
+(1, 'super_admin', 'Super Admin', 'secret', 'super_admin', '2021-05-05 05:28:01', '2021-05-05 05:28:01');
 
 --
 -- Indexes for dumped tables
@@ -198,19 +247,19 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `stock_history`
 --
 ALTER TABLE `stock_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

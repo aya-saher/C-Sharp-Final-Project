@@ -38,9 +38,10 @@
             this.lbl_orders = new System.Windows.Forms.Label();
             this.lbl_reports = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.lbl_settings = new System.Windows.Forms.Label();
+            this.lbl_stock_management = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_settings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -139,15 +140,15 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // lbl_settings
+            // lbl_stock_management
             // 
-            this.lbl_settings.AutoSize = true;
-            this.lbl_settings.Location = new System.Drawing.Point(516, 249);
-            this.lbl_settings.Name = "lbl_settings";
-            this.lbl_settings.Size = new System.Drawing.Size(45, 13);
-            this.lbl_settings.TabIndex = 11;
-            this.lbl_settings.Text = "Settings";
-            this.lbl_settings.Click += new System.EventHandler(this.lbl_settings_Click);
+            this.lbl_stock_management.AutoSize = true;
+            this.lbl_stock_management.Location = new System.Drawing.Point(484, 249);
+            this.lbl_stock_management.Name = "lbl_stock_management";
+            this.lbl_stock_management.Size = new System.Drawing.Size(100, 13);
+            this.lbl_stock_management.TabIndex = 11;
+            this.lbl_stock_management.Text = "Stock Management";
+            this.lbl_stock_management.Click += new System.EventHandler(this.lbl_settings_Click);
             // 
             // pictureBox6
             // 
@@ -167,13 +168,24 @@
             this.btn_logout.UseVisualStyleBackColor = true;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
+            // btn_settings
+            // 
+            this.btn_settings.Location = new System.Drawing.Point(442, 309);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Size = new System.Drawing.Size(75, 23);
+            this.btn_settings.TabIndex = 13;
+            this.btn_settings.Text = "Settings";
+            this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 344);
+            this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.btn_logout);
-            this.Controls.Add(this.lbl_settings);
+            this.Controls.Add(this.lbl_stock_management);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.lbl_reports);
             this.Controls.Add(this.pictureBox5);
@@ -210,9 +222,10 @@
         private System.Windows.Forms.Label lbl_orders;
         private System.Windows.Forms.Label lbl_reports;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label lbl_settings;
+        private System.Windows.Forms.Label lbl_stock_management;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_settings;
     }
 }
 
