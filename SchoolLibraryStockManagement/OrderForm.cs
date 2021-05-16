@@ -59,16 +59,33 @@ namespace SchoolLibraryStockManagement
         }
         private void btnAddOrderItem_Click(object sender, EventArgs e)
         {
-            if (tBQuantity.Text != "" && tBQuantity.Text != "0" && Convert.ToInt32(tBQuantity.Text) < Convert.ToInt32(product_quantity) + 1)
+            if (tBQuantity.Text != "")
             {
-                DatabaseOperation.create((new OrderItem()).insert("0", selected_product, tBQuantity.Text, product_price));
-                dGVOrderItems.DataSource = DatabaseOperation.get(new DataTable(), (new OrderItem()).orderItems("0"));
-                clearOrderFields(true, true);
-                clearFields();
+                if (!tBQuantity.Text.Contains("."))
+                {
+                    var product_q = Convert.ToInt32(product_quantity) + 1;
+                    if (tBQuantity.Text != "0" && Convert.ToDouble(tBQuantity.Text) > 0 && Convert.ToInt32(tBQuantity.Text) < product_q)
+                    {
+                        DatabaseOperation.create((new OrderItem()).insert("0", selected_product, tBQuantity.Text, product_price));
+                        dGVOrderItems.DataSource = DatabaseOperation.get(new DataTable(), (new OrderItem()).orderItems("0"));
+                        clearOrderFields(true, true);
+                        clearFields();
+                    }
+                    else
+                    {
+                        
+                        MessageBox.Show("Quantity must be more than 0 and less than " + product_q);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Quantity must be Integer number");
+                }
             }
-            else{
-                MessageBox.Show("Quantity must be more than 0 and less than "+ product_quantity);
+            else {
+                MessageBox.Show("Quantity Field required");
             }
+           
         }
 
         private void dGVProducts_CellClick(object sender, DataGridViewCellEventArgs e)
