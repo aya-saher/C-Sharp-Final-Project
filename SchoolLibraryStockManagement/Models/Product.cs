@@ -14,7 +14,15 @@ namespace SchoolLibraryStockManagement.Models
         {
             return "SELECT * FROM products WHERE deleted_at IS NULL";
         }
+        public string select_productsHasQuantity()
+        {
+            return "SELECT * FROM products WHERE deleted_at IS NULL AND quantity != 0";
+        }
 
+        public string select_Quantity(string product_code)
+        {
+            return "SELECT quantity FROM products WHERE code = " + product_code;
+        }
         public string search(string column, string value)
         {
             return "SELECT * FROM products WHERE " + column + " LIKE '%" + value + "%' AND deleted_at IS NULL";
