@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
+
+using System.Runtime.InteropServices;
+using SchoolLibraryStockManagement.Libraries;
+using SchoolLibraryStockManagement.Models;
 namespace SchoolLibraryStockManagement
 {
     public partial class Main : Form
@@ -25,25 +28,26 @@ namespace SchoolLibraryStockManagement
        int nHeightEllipse // width of ellipse
    );
 
+        public User user;
 
-        public Main()
+        public Main(User user)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-
+            this.user = user;
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
+            user = null;
             this.Hide();
             new Login().ShowDialog();
-            this.Close();
         }
 
         private void lbl_products_Click(object sender, EventArgs e)
         {
-            new ProductForm().ShowDialog();
+            new ProductForm(user).ShowDialog();
         }
 
         private void lbl_categories_Click(object sender, EventArgs e)
@@ -78,7 +82,32 @@ namespace SchoolLibraryStockManagement
 
         private void Main_Load(object sender, EventArgs e)
         {
+            if (user == null)
+            {
+                this.Hide();
+                new Login().ShowDialog();
+            }
+            else
+            {
+                switch (user.role)
+                {
+                    case "sales_employee":
+                        lbl_users.Enabled = false;
+                        lbl_reports.Enabled = false;
+                        lbl_products.Enabled = true;
+                        lbl_categories.Enabled = false;
+                        lbl_stock_management.Enabled = true;
+                        break;
+                    case "warehouse_employee":
+                        lbl_users.Enabled = false;
+                        lbl_reports.Enabled = false;
+                        lbl_orders.Enabled = false;
+                        lbl_stock_management.Enabled = true;
 
+                        break;
+                }
+
+            }
         }
     }
 }
