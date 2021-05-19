@@ -28,12 +28,12 @@ This project is the Final Project for (Visual Programming 2) Subject ` 2021-05-2
     * Step 2
 
 # Team
-Aya Kamal         © 2021 | a.kamal@gmail.ly
+Aya Kamal         © 2021 | bd58296@gmail.com
 
-Aya Saher         © 2021 | aya.saheer@gmail.ly
+Aya Saher         © 2021 | aya.saheer@gmail.com
 
-Israa Alsarwi     © 2021 | israa.alsarwi@gmail.ly
+Israa Alsarwi     © 2021 | israa18ali99@gmail.com
 
-Jannat Mgawshi    © 2021 | j.m.almgawshi@gmail.ly
+Jannat Mgawshi    © 2021 | j.m.almgawshi@gmail.com
 
-Khawla Alhode\iry © 2021 | khawla.alhodery@gmail.ly
+Khawla Alhode\iry © 2021 | khawla.alhodiry@gmail.com

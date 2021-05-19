@@ -6,11 +6,10 @@ C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStock
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojResolveAssemblyReference.cache
-C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Category.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
-C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Product.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
+<<<<<<< HEAD
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.User.resources
 C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagement.resources
 C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\SchoolLibraryStockManagement\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe.config
@@ -28,3 +27,81 @@ C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\SchoolLibraryStockM
 C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagement.resources
 C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.User.resources
 C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.GenerateResource.Cache
+=======
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.CategoryForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagementForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.UserForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OutofStockReportForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ReportForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.TopSellingReportForm.resources
+C:\Users\USB\Downloads\Aya Saher\SchoolLibraryStockManagement\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductMovementReportForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe.config
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.pdb
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\ar\SchoolLibraryStockManagement.resources.dll
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojResolveAssemblyReference.cache
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.CategoryForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OutofStockReportForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductMovementReportForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Properties.Resources.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ReportForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagementForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.TopSellingReportForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.UserForm.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.ar.resources
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.GenerateResource.Cache
+C:\Users\J.M.Almgawshi\Documents\Visual Studio 2015\Projects\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\ar\SchoolLibraryStockManagement.resources.dll
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojAssemblyReference.cache
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.CategoryForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OutofStockReportForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductMovementReportForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Properties.Resources.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ReportForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagementForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.TopSellingReportForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.UserForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.ar.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.GenerateResource.cache
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe.config
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.pdb
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\ar\SchoolLibraryStockManagement.resources.dll
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OrdersForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\ar\SchoolLibraryStockManagement.resources.dll
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe.config
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.pdb
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\ar\SchoolLibraryStockManagement.resources.dll
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojAssemblyReference.cache
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.CategoryForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OrdersForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OutofStockReportForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductMovementReportForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Properties.Resources.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ReportForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagementForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.TopSellingReportForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.UserForm.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.ar.resources
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.GenerateResource.cache
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\ar\SchoolLibraryStockManagement.resources.dll
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
+E:\Documents\8th sem\C#\others commits\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
+>>>>>>> master

@@ -30,10 +30,75 @@ namespace SchoolLibraryStockManagement.Libraries
             {
                 command.Connection.Close();
             }
+            if (table.Rows.Count > 0)
+            {
+                return table;
+
+            }
+            return null;
+        }
+        public static DataTable select(DataTable table, string query)
+        {
+            DbCommand command = DatabaseConnection.getConnection();
+            command.CommandText = query;
+            try
+            {
+                command.Connection.Open();
+                DbDataReader reader = command.ExecuteReader();
+                table.Load(reader);
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
             return table;
         }
-
         public static void create(string query)
+        {
+            DbCommand command = DatabaseConnection.getConnection();
+            command.CommandText = query;
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public static void update(string query)
+        {
+            DbCommand command = DatabaseConnection.getConnection();
+            command.CommandText = query;
+
+            try
+            {
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public static void delete(string query)
         {
             DbCommand command = DatabaseConnection.getConnection();
             command.CommandText = query;

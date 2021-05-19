@@ -8,5 +8,11 @@ namespace SchoolLibraryStockManagement.Models
 {
     class Category
     {
+        public string[] fields = { "name" };
+
+        public string all()
+        {
+            return "SELECT * FROM categories WHERE deleted_at IS NULL";
+        }
     }
 }

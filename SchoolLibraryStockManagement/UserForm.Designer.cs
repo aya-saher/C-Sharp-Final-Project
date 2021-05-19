@@ -1,6 +1,6 @@
 ﻿namespace SchoolLibraryStockManagement
 {
-    partial class User
+    partial class UserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,17 +34,20 @@
             this.lbl_name = new System.Windows.Forms.Label();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.lbl_password = new System.Windows.Forms.Label();
-            this.txt_role = new System.Windows.Forms.TextBox();
             this.lbl_role = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
-            this.btn_edir = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_activation = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.cmb_columns = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.dgv_products = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
+            this.dgv_users = new System.Windows.Forms.DataGridView();
+            this.wareRaio = new System.Windows.Forms.RadioButton();
+            this.salesRadio = new System.Windows.Forms.RadioButton();
+            this.superRadio = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_username
@@ -95,13 +98,6 @@
             this.lbl_password.TabIndex = 5;
             this.lbl_password.Text = "Password";
             // 
-            // txt_role
-            // 
-            this.txt_role.Location = new System.Drawing.Point(85, 177);
-            this.txt_role.Name = "txt_role";
-            this.txt_role.Size = new System.Drawing.Size(100, 20);
-            this.txt_role.TabIndex = 8;
-            // 
             // lbl_role
             // 
             this.lbl_role.AutoSize = true;
@@ -119,15 +115,16 @@
             this.btn_add.TabIndex = 9;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // btn_edir
+            // btn_edit
             // 
-            this.btn_edir.Location = new System.Drawing.Point(219, 104);
-            this.btn_edir.Name = "btn_edir";
-            this.btn_edir.Size = new System.Drawing.Size(75, 23);
-            this.btn_edir.TabIndex = 10;
-            this.btn_edir.Text = "Edit";
-            this.btn_edir.UseVisualStyleBackColor = true;
+            this.btn_edit.Location = new System.Drawing.Point(219, 104);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(75, 23);
+            this.btn_edit.TabIndex = 10;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
             // 
             // btn_delete
             // 
@@ -172,28 +169,74 @@
             this.txt_search.Size = new System.Drawing.Size(156, 20);
             this.txt_search.TabIndex = 32;
             // 
-            // dgv_products
+            // dgv_users
             // 
-            this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_products.Location = new System.Drawing.Point(346, 62);
-            this.dgv_products.Name = "dgv_products";
-            this.dgv_products.Size = new System.Drawing.Size(364, 147);
-            this.dgv_products.TabIndex = 31;
+            this.dgv_users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_users.Location = new System.Drawing.Point(346, 62);
+            this.dgv_users.Name = "dgv_users";
+            this.dgv_users.Size = new System.Drawing.Size(364, 147);
+            this.dgv_users.TabIndex = 31;
             // 
-            // User
+            // wareRaio
+            // 
+            this.wareRaio.AutoSize = true;
+            this.wareRaio.Location = new System.Drawing.Point(229, 220);
+            this.wareRaio.Name = "wareRaio";
+            this.wareRaio.Size = new System.Drawing.Size(125, 17);
+            this.wareRaio.TabIndex = 42;
+            this.wareRaio.Tag = "type";
+            this.wareRaio.Text = "warehouse employee";
+            this.wareRaio.UseVisualStyleBackColor = true;
+            // 
+            // salesRadio
+            // 
+            this.salesRadio.AutoSize = true;
+            this.salesRadio.Location = new System.Drawing.Point(126, 220);
+            this.salesRadio.Name = "salesRadio";
+            this.salesRadio.Size = new System.Drawing.Size(97, 17);
+            this.salesRadio.TabIndex = 41;
+            this.salesRadio.Tag = "type";
+            this.salesRadio.Text = "sales employee";
+            this.salesRadio.UseVisualStyleBackColor = true;
+            // 
+            // superRadio
+            // 
+            this.superRadio.AutoSize = true;
+            this.superRadio.Checked = true;
+            this.superRadio.Location = new System.Drawing.Point(35, 220);
+            this.superRadio.Name = "superRadio";
+            this.superRadio.Size = new System.Drawing.Size(82, 17);
+            this.superRadio.TabIndex = 40;
+            this.superRadio.TabStop = true;
+            this.superRadio.Tag = "type";
+            this.superRadio.Text = "super admin";
+            this.superRadio.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(85, 180);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 39;
+            // 
+            // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 248);
+            this.Controls.Add(this.wareRaio);
+            this.Controls.Add(this.salesRadio);
+            this.Controls.Add(this.superRadio);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.dgv_products);
+            this.Controls.Add(this.dgv_users);
             this.Controls.Add(this.btn_activation);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_edir);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.txt_role);
             this.Controls.Add(this.lbl_role);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.lbl_password);
@@ -201,9 +244,10 @@
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.lbl_username);
-            this.Name = "User";
+            this.Name = "UserForm";
             this.Text = "User";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
+            this.Load += new System.EventHandler(this.UserForm_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,15 +261,18 @@
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label lbl_password;
-        private System.Windows.Forms.TextBox txt_role;
         private System.Windows.Forms.Label lbl_role;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_edir;
+        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_activation;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.ComboBox cmb_columns;
         private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.DataGridView dgv_products;
+        private System.Windows.Forms.DataGridView dgv_users;
+        private System.Windows.Forms.RadioButton wareRaio;
+        private System.Windows.Forms.RadioButton salesRadio;
+        private System.Windows.Forms.RadioButton superRadio;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
