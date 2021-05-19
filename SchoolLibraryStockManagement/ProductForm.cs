@@ -15,10 +15,12 @@ namespace SchoolLibraryStockManagement
     public partial class ProductForm : Form
     {
         public string selected_product;
+        public User user;
 
-        public ProductForm()
+        public ProductForm(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void btn_stock_management_Click(object sender, EventArgs e)
@@ -34,11 +36,25 @@ namespace SchoolLibraryStockManagement
 
             fillCategories();
 
-            btn_delete.Enabled = false;
-            btn_edit.Enabled = false;
-            btn_clear.Enabled = false;
-            txt_price.ReadOnly = true;
-            txt_quantity.ReadOnly = true;
+            if (user.role == "sales_employee")
+            {
+                btn_add.Enabled = false;
+                btn_delete.Enabled = false;
+                btn_edit.Enabled = false;
+                btn_clear.Enabled = false;
+                txt_price.ReadOnly = true;
+                txt_quantity.ReadOnly = true;
+                btn_add_category.Enabled = false;
+            }
+            else
+            {
+                btn_add.Enabled = true;
+                btn_delete.Enabled = true;
+                btn_edit.Enabled = true;
+                btn_clear.Enabled = true;
+                txt_price.ReadOnly = false;
+                txt_quantity.ReadOnly = false;
+            }
         }
 
         public void fillColumns()
@@ -96,13 +112,24 @@ namespace SchoolLibraryStockManagement
         private void dgv_products_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             selected_product = dgv_products.Rows[e.RowIndex].Cells["id"].Value.ToString();
-            btn_delete.Enabled = true;
-            btn_edit.Enabled = true;
-            btn_clear.Enabled = true;
-            btn_add.Enabled = false;
-            txt_price.ReadOnly = false;
-            txt_quantity.ReadOnly = false;
-
+            if (user.role == "sales_employee" || user.role == "warehouse_employee")
+            {
+                btn_add.Enabled = false;
+                btn_delete.Enabled = false;
+                btn_edit.Enabled = false;
+                btn_clear.Enabled = false;
+                txt_price.ReadOnly = true;
+                txt_quantity.ReadOnly = true;
+            }
+            else
+            {
+                btn_add.Enabled = false;
+                btn_delete.Enabled = true;
+                btn_edit.Enabled = true;
+                btn_clear.Enabled = true;
+                txt_price.ReadOnly = false;
+                txt_quantity.ReadOnly = false;
+            }
             txt_code.Text = dgv_products.Rows[e.RowIndex].Cells["code"].Value.ToString();
             txt_name.Text = dgv_products.Rows[e.RowIndex].Cells["name"].Value.ToString();
             txt_description.Text = dgv_products.Rows[e.RowIndex].Cells["description"].Value.ToString();
