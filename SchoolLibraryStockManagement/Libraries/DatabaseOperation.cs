@@ -92,5 +92,18 @@ namespace SchoolLibraryStockManagement.Libraries
                 command.Connection.Close();
             }
         }
+        public static bool authenticate(string query)
+        {
+
+            DbCommand command = DatabaseConnection.getConnection();
+            command.CommandText = query;
+            command.Connection.Open();
+            var result = command.ExecuteScalar();
+            command.Connection.Close();
+
+            if (result != null)
+                return true;
+            return false;
+        }
     }
 }
