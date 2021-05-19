@@ -178,7 +178,6 @@
             this.tBSearch.Name = "tBSearch";
             this.tBSearch.Size = new System.Drawing.Size(100, 20);
             this.tBSearch.TabIndex = 39;
-            this.tBSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBQuantity_KeyPress);
             // 
             // btnDeleteOrderItem
             // 

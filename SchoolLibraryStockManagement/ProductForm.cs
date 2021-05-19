@@ -9,18 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class ProductForm : Form
     {
         public string selected_product;
-        public User user;
+        private readonly IProduct _product = new IProductReciever();
+        private readonly ICategory _category = new ICategoryReciever();
+        Invoker _invoker = new Invoker();
 
-        public ProductForm(User user)
+        public ProductForm()
         {
             InitializeComponent();
-            this.user = user;
         }
 
         private void btn_stock_management_Click(object sender, EventArgs e)
@@ -30,31 +32,21 @@ namespace SchoolLibraryStockManagement
 
         private void Product_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Product().all());
+            dgv_products.DataSource = _product.SelectAll();
 
             fillColumns();
 
             fillCategories();
 
-            if (user.role == "sales_employee")
-            {
-                btn_add.Enabled = false;
-                btn_delete.Enabled = false;
-                btn_edit.Enabled = false;
-                btn_clear.Enabled = false;
-                txt_price.ReadOnly = true;
-                txt_quantity.ReadOnly = true;
-                btn_add_category.Enabled = false;
-            }
-            else
-            {
-                btn_add.Enabled = true;
-                btn_delete.Enabled = true;
-                btn_edit.Enabled = true;
-                btn_clear.Enabled = true;
-                txt_price.ReadOnly = false;
-                txt_quantity.ReadOnly = false;
-            }
+            btn_delete.Enabled = false;
+            btn_edit.Enabled = false;
+            btn_clear.Enabled = false;
+            txt_price.ReadOnly = true;
+            txt_quantity.ReadOnly = true;
+        }
+        private DataTable GEtAllProducts()
+        {
+           return _product.SelectAll();
         }
 
         public void fillColumns()
@@ -72,7 +64,7 @@ namespace SchoolLibraryStockManagement
             table.Columns.Add("name", typeof(string));
             cmb_categories.ValueMember = "id";
             cmb_categories.DisplayMember = "name";
-            cmb_categories.DataSource = DatabaseOperation.get(table, (new Category()).all());
+            cmb_categories.DataSource = _category.GetAll(table);
         }
 
         private void btn_add_category_Click(object sender, EventArgs e)
@@ -85,51 +77,36 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Product().search((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
+                dgv_products.DataSource = _product.Search((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
             }
             else
             {
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Product().all());
+                dgv_products.DataSource = GEtAllProducts();
             }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string query = (new Product()).insert(
-               txt_code.Text,
+            _invoker.Invoke(new InsertProduct(_product,txt_code.Text,
                txt_name.Text,
                txt_description.Text,
                txt_price.Text,
                txt_quantity.Text,
-               cmb_categories.SelectedValue.ToString()
-            );
-            Console.WriteLine(query);
-            DatabaseOperation.create(query);
+               cmb_categories.SelectedValue.ToString()));
 
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), (new Product()).all());
+            dgv_products.DataSource = GEtAllProducts();
         }
 
         private void dgv_products_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             selected_product = dgv_products.Rows[e.RowIndex].Cells["id"].Value.ToString();
-            if (user.role == "sales_employee" || user.role == "warehouse_employee")
-            {
-                btn_add.Enabled = false;
-                btn_delete.Enabled = false;
-                btn_edit.Enabled = false;
-                btn_clear.Enabled = false;
-                txt_price.ReadOnly = true;
-                txt_quantity.ReadOnly = true;
-            }
-            else
-            {
-                btn_add.Enabled = false;
-                btn_delete.Enabled = true;
-                btn_edit.Enabled = true;
-                btn_clear.Enabled = true;
-                txt_price.ReadOnly = false;
-                txt_quantity.ReadOnly = false;
-            }
+            btn_delete.Enabled = true;
+            btn_edit.Enabled = true;
+            btn_clear.Enabled = true;
+            btn_add.Enabled = false;
+            txt_price.ReadOnly = false;
+            txt_quantity.ReadOnly = false;
+
             txt_code.Text = dgv_products.Rows[e.RowIndex].Cells["code"].Value.ToString();
             txt_name.Text = dgv_products.Rows[e.RowIndex].Cells["name"].Value.ToString();
             txt_description.Text = dgv_products.Rows[e.RowIndex].Cells["description"].Value.ToString();
@@ -140,25 +117,22 @@ namespace SchoolLibraryStockManagement
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            DatabaseOperation.delete(new Product().delete(selected_product));
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), (new Product()).all());
+            _invoker.Invoke(new DeleteProduct(_product,selected_product));
+            dgv_products.DataSource = GEtAllProducts();
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            string query = (new Product()).update(
-               selected_product,
+            _invoker.Invoke(new UpdateProduct(_product, selected_product,
                txt_code.Text,
                txt_name.Text,
                txt_description.Text,
                txt_price.Text,
                txt_quantity.Text,
                cmb_categories.SelectedValue.ToString()
-            );
-            Console.WriteLine(query);
-            DatabaseOperation.update(query);
+            ));
 
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), (new Product()).all());
+            dgv_products.DataSource = GEtAllProducts();
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
