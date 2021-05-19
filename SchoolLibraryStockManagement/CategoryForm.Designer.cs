@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_edir = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.txt_description = new System.Windows.Forms.TextBox();
             this.lbl_description = new System.Windows.Forms.Label();
@@ -38,8 +38,9 @@
             this.btn_search = new System.Windows.Forms.Button();
             this.cmb_columns = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.dgv_products = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).BeginInit();
+            this.dgv_categories = new System.Windows.Forms.DataGridView();
+            this.btn_clear = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_delete
@@ -50,15 +51,17 @@
             this.btn_delete.TabIndex = 24;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // btn_edir
+            // btn_edit
             // 
-            this.btn_edir.Location = new System.Drawing.Point(213, 113);
-            this.btn_edir.Name = "btn_edir";
-            this.btn_edir.Size = new System.Drawing.Size(75, 23);
-            this.btn_edir.TabIndex = 23;
-            this.btn_edir.Text = "Edit";
-            this.btn_edir.UseVisualStyleBackColor = true;
+            this.btn_edit.Location = new System.Drawing.Point(213, 113);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(75, 23);
+            this.btn_edit.TabIndex = 23;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_add
             // 
@@ -68,6 +71,7 @@
             this.btn_add.TabIndex = 22;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // txt_description
             // 
@@ -109,6 +113,7 @@
             this.btn_search.TabIndex = 34;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // cmb_columns
             // 
@@ -125,33 +130,46 @@
             this.txt_search.Size = new System.Drawing.Size(156, 20);
             this.txt_search.TabIndex = 32;
             // 
-            // dgv_products
+            // dgv_categories
             // 
-            this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_products.Location = new System.Drawing.Point(321, 58);
-            this.dgv_products.Name = "dgv_products";
-            this.dgv_products.Size = new System.Drawing.Size(364, 147);
-            this.dgv_products.TabIndex = 31;
+            this.dgv_categories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_categories.Location = new System.Drawing.Point(321, 58);
+            this.dgv_categories.Name = "dgv_categories";
+            this.dgv_categories.Size = new System.Drawing.Size(364, 147);
+            this.dgv_categories.TabIndex = 31;
+            this.dgv_categories.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_products_CellMouseDoubleClick);
             // 
-            // Category
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(213, 182);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_clear.TabIndex = 35;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
+            // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 234);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);
-            this.Controls.Add(this.dgv_products);
+            this.Controls.Add(this.dgv_categories);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_edir);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.txt_description);
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_name);
-            this.Name = "Category";
+            this.Name = "CategoryForm";
             this.Text = "Category";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_products)).EndInit();
+            this.Load += new System.EventHandler(this.CategoryForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_categories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,7 +178,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button btn_edir;
+        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.TextBox txt_description;
         private System.Windows.Forms.Label lbl_description;
@@ -169,7 +187,8 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.ComboBox cmb_columns;
         private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.DataGridView dgv_products;
+        private System.Windows.Forms.DataGridView dgv_categories;
+        private System.Windows.Forms.Button btn_clear;
 
     }
 }
