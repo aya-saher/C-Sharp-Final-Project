@@ -62,3 +62,27 @@ D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockMan
 D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\ar\SchoolLibraryStockManagement.resources.dll
 D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OrdersForm.resources
 D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\ar\SchoolLibraryStockManagement.resources.dll
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe.config
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.exe
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\SchoolLibraryStockManagement.pdb
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\ar\SchoolLibraryStockManagement.resources.dll
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojAssemblyReference.cache
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.CategoryForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Login.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OrdersForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OutofStockReportForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ProductMovementReportForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Properties.Resources.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.ReportForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Settings.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.StockManagementForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.TopSellingReportForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.UserForm.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.ar.resources
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.GenerateResource.cache
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csproj.CoreCompileInputs.cache
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\ar\SchoolLibraryStockManagement.resources.dll
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
+C:\Users\PREDATOR\Desktop\c#\المشروع\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
