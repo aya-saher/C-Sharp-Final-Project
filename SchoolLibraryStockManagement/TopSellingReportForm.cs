@@ -9,19 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class TopSellingReportForm : Form
     {
+        private readonly IReport _report = new IReportReciever();
+
         public TopSellingReportForm()
         {
             InitializeComponent();
         }
-
+        public DataTable GetTopSelling()
+        {
+            return _report.GetTopSelling();
+        }
         private void TopSellingReportForm_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().getTopSelling());
+            dgv_products.DataSource = GetTopSelling();
 
             fillColumns();
         }
@@ -38,11 +44,11 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().searchTopSelling((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
+                dgv_products.DataSource = _report.SearchTopSelling((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
             }
             else
             {
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().getTopSelling());
+                dgv_products.DataSource = GetTopSelling();
             }
         }
     }

@@ -17,7 +17,7 @@ namespace SchoolLibraryStockManagement.Models
 
         public string select_productsHasQuantity()
         {
-            return "SELECT * FROM products WHERE deleted_at IS NULL AND quantity != 0";
+            return "SELECT * FROM products WHERE deleted_at IS NULL AND quantity > 0";
         }
 
         public string select_Quantity(string product_code)
@@ -29,7 +29,10 @@ namespace SchoolLibraryStockManagement.Models
         {
             return "SELECT * FROM products WHERE " + column + " LIKE '%" + value + "%' AND deleted_at IS NULL";
         }
-
+        public string search_HasQuantity(string column, string value)
+        {
+            return "SELECT * FROM products WHERE " + column + " LIKE '%" + value + "%' AND deleted_at IS NULL AND quantity > 0";
+        }
         public string insert(string code, string name, string description, string price, string quantity, string category_id)
         {
             string query = "INSERT INTO products(code, name, description, price, quantity, category_id)";

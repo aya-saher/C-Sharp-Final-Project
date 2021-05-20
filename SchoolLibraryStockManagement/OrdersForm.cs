@@ -93,7 +93,7 @@ namespace SchoolLibraryStockManagement
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
-            _invoker.Invoke(new DeleteOrder(_order, selected_order));
+            _invoker.Invoke(new DeleteOrder(_order, _orderItem,selected_order));
             dGVOrders.DataSource = GetAllOrders();
             clear();
         }
@@ -130,11 +130,16 @@ namespace SchoolLibraryStockManagement
 
             if (tB_Quantity.Text != "" && tB_Quantity.Text != "0" && Convert.ToInt32(tB_Quantity.Text) < product_quantity)
             {
-                _invoker.Invoke(new UpdateOrderItems(_orderItem , _order , selected_order , selected_order_item , tB_Quantity.Text));
+                _invoker.Invoke(new UpdateOrderItems(_orderItem, _order, selected_order, selected_order_item, tB_Quantity.Text));
                 dGVOrderItems.DataSource = GetOrderItems(selected_order);
                 dGVOrders.DataSource = GetAllOrders();
             }
-            else {
+            else if (Convert.ToInt32(tB_Quantity.Text) < product_quantity)
+            {
+                MessageBox.Show("There is no more quantity in this product");
+            }
+            else
+            {
                 MessageBox.Show("Quantity must be more than 0 and less than " + product_quantity.ToString());
             }
         }
@@ -162,7 +167,7 @@ namespace SchoolLibraryStockManagement
         private void btn_editOrder_Click(object sender, EventArgs e)
         {
             if (!tB_referenceNum.Text.Contains(".")) { 
-            if (tB_referenceNum.Text.Length > 0 && tB_referenceNum.Text.Length == 7) {
+            if (tB_referenceNum.Text.Length > 0 && tB_referenceNum.Text.Length == 6) {
                 _invoker.Invoke(new UpdateOrder(_order, selected_order, tB_referenceNum.Text));
                 dGVOrders.DataSource = GetAllOrders();
             }

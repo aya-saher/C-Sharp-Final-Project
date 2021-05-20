@@ -60,19 +60,22 @@ namespace SchoolLibraryStockManagement.Command
     public class DeleteOrder : ICommand
     {
         private readonly IOrder _order;
+        private readonly IOrderItem _orderItem;
         private string _id;
-        public DeleteOrder(IOrder order, string id)
+        public DeleteOrder(IOrder order, IOrderItem orderItem, string id)
         {
             _order = order;
+            _orderItem = orderItem;
             _id = id;
         }
         public void Execute()
         {
+            _orderItem.DeleteOrderById(_id);
             _order.Delete(_id);
         }
         public bool CanExecute()
         {
-            if (Convert.ToInt32(_id) > 0)
+            if (_id != "")
                 return true;
             else
                 return false;
@@ -94,7 +97,7 @@ namespace SchoolLibraryStockManagement.Command
         }
         public bool CanExecute()
         {
-            if (Convert.ToInt32(_id) > 0)
+            if (_id != "")
                 return true;
             else
                 return false;
@@ -118,7 +121,7 @@ namespace SchoolLibraryStockManagement.Command
         }
         public bool CanExecute()
         {
-            if (_referenceNum != "0")
+            if (_referenceNum != "")
                 return true;
             else
                 return false;

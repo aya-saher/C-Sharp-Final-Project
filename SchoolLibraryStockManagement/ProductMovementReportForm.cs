@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class ProductMovementReportForm : Form
     {
+        private readonly IReport _report = new IReportReciever();
+
         public ProductMovementReportForm()
         {
             InitializeComponent();
@@ -36,8 +39,7 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                Console.WriteLine(new Report().getProductMovement((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().getProductMovement((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
+                dgv_products.DataSource = _report.GetProductMovement((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
             }
             else
             {

@@ -27,7 +27,7 @@ namespace SchoolLibraryStockManagement.Command
         }
         public bool CanExecute()
         {
-            if (_code != "" && _name != "" && _description != "" && _price != "" && _quantity != "" && _category_id != "")
+            if (_code != "" && _name != "" && _price != "" && _category_id != "")
                 return true;
             else return false;
         }
@@ -53,7 +53,7 @@ namespace SchoolLibraryStockManagement.Command
         }
         public bool CanExecute()
         {
-            if (_id != "" && _code != "" && _name != "" && _description != "" && _price != "" && _quantity != "" && _category_id != "")
+            if (_id != "" && _code != "" && _name != "" && _price != "" && _category_id != "")
                 return true;
             else return false;
         }

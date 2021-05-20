@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class Settings : Form
     {
         public User user;
-
+        private readonly ISettingReciever _setting = new ISettingReciever();
+        Invoker _invoker = new Invoker();
         public Settings(User user)
         {
             InitializeComponent();
@@ -40,9 +42,7 @@ namespace SchoolLibraryStockManagement
                 this.user.name = txt_name.Text;
                 this.user.username = txt_username.Text;
 
-                string query = new User().settings(this.user.id, txt_name.Text, txt_username.Text, txt_password.Text);
-                DatabaseOperation.select(new DataTable(), query);
-
+                _invoker.Invoke(new UpdateSetting(_setting,this.user.id, txt_name.Text, txt_username.Text, txt_password.Text));
                 MessageBox.Show("Updated Successfully!!");
 
                 this.Hide();

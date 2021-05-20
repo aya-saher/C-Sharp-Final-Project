@@ -15,6 +15,7 @@ namespace SchoolLibraryStockManagement.Command
         DataTable SelectProductsHasQuantity();
         string SelectQuantity(string product_code);
         DataTable Search(string column, string value);
+        DataTable SearchHasQuantity(string column, string value);
         void Insert(string code, string name, string description, string price, string quantity, string category_id);
         void Update(string id, string code, string name, string description, string price, string quantity, string category_id);
         void Delete(string id);
@@ -37,6 +38,10 @@ namespace SchoolLibraryStockManagement.Command
         public DataTable Search(string column, string value)
         {
             return DatabaseOperation.get(new DataTable(), new Product().search(column, value));
+        }
+        public DataTable SearchHasQuantity(string column, string value)
+        { 
+            return DatabaseOperation.get(new DataTable(), new Product().search_HasQuantity(column, value));
         }
         public void Insert(string code, string name, string description, string price, string quantity, string category_id)
         {

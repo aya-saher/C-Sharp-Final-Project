@@ -9,19 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class OutofStockReportForm : Form
     {
+        private readonly IReport _report = new IReportReciever();
         public OutofStockReportForm()
         {
             InitializeComponent();
         }
-
+        public DataTable GetOutofStock()
+        {
+            return _report.GetOutofStock();
+        }
         private void OutofStockReportForm_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().getOutofStock());
+            dgv_products.DataSource = GetOutofStock();
 
             fillColumns();
         }
@@ -38,11 +43,11 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().searchOutofStock((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
+                dgv_products.DataSource = _report.SearchOutofStock((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
             }
             else
             {
-                dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Report().getOutofStock());
+                dgv_products.DataSource = GetOutofStock();
             }
         }
     }

@@ -62,7 +62,7 @@ namespace SchoolLibraryStockManagement
 
         private void lbl_orders_Click(object sender, EventArgs e)
         {
-            new OrderForm().ShowDialog();
+            new OrderForm(user).ShowDialog();
         }
 
         private void lbl_reports_Click(object sender, EventArgs e)
