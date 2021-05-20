@@ -206,8 +206,9 @@ namespace SchoolLibraryStockManagement
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
-            _invoker.Invoke(new DeleteOrderItems(_orderItem, "0"));
+            _invoker.Invoke(new DeleteOrder(_order,_orderItem, "0"));
             dGVOrderItems.DataSource = new DataTable();
+            dGVOrderItems.DataSource = GetOrderItems();
             dGVProducts.DataSource = SelectProductsHasQuantity();
             clearOrderFields(false, false);
             clearFields();

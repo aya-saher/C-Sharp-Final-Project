@@ -2,7 +2,6 @@
 using System.Data;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Models;
-using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
@@ -128,13 +127,13 @@ namespace SchoolLibraryStockManagement
             string quantity = _product.SelectQuantity(selected_product);
             int product_quantity = Convert.ToInt32(tB_Quantity.Text) + Convert.ToInt32(quantity)+1;
 
-            if (tB_Quantity.Text != "" && tB_Quantity.Text != "0" && Convert.ToInt32(tB_Quantity.Text) < product_quantity)
+            if (tB_Quantity.Text != "" && tB_Quantity.Text != "0" && Convert.ToInt32(tB_Quantity.Text) < product_quantity && product_quantity > 0)
             {
                 _invoker.Invoke(new UpdateOrderItems(_orderItem, _order, selected_order, selected_order_item, tB_Quantity.Text));
                 dGVOrderItems.DataSource = GetOrderItems(selected_order);
                 dGVOrders.DataSource = GetAllOrders();
             }
-            else if (Convert.ToInt32(tB_Quantity.Text) < product_quantity)
+            else if (product_quantity < 0)
             {
                 MessageBox.Show("There is no more quantity in this product");
             }
@@ -146,8 +145,10 @@ namespace SchoolLibraryStockManagement
 
         private void btnDeleteOrederItem_Click(object sender, EventArgs e)
         {
-            _invoker.Invoke(new DeleteOrderItems(_orderItem , selected_order_item));
+            int count = dGVOrderItems.Rows.Count;
+            _invoker.Invoke(new DeleteOrderItemsFROMOrder(_orderItem , _order,selected_order_item , selected_order  , count));
             dGVOrderItems.DataSource = GetOrderItems(selected_order);
+            dGVOrders.DataSource = GetAllOrders();
             clearOrderitemsFields();
         }
 

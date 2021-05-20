@@ -103,6 +103,36 @@ namespace SchoolLibraryStockManagement.Command
                 return false;
         }
     }
+    public class DeleteOrderItemsFROMOrder : ICommand
+    {
+        private readonly IOrderItem _orderItem;
+        private readonly IOrder _order;
+        private string _id, _orderId;
+        private int _count;
+        public DeleteOrderItemsFROMOrder(IOrderItem orderItem, IOrder order,string id, string orderId ,int count)
+        {
+            _orderItem = orderItem;
+            _order = order;
+            _id = id;
+            _orderId = orderId;
+            _count = count;
+        }
+        public void Execute()
+        {
+            _orderItem.Delete(_id);
+            string total = "0";
+            if (_count > 2)
+               total = _orderItem.GetTotalPrice(_orderId);
+            _order.UpdateTotal(_orderId, total);
+        }
+        public bool CanExecute()
+        {
+            if (_id != "")
+                return true;
+            else
+                return false;
+        }
+    }
     public class UpdateOrder : ICommand
     {
         private readonly IOrder _order;
