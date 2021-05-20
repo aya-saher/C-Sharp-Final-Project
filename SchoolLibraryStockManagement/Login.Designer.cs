@@ -74,6 +74,7 @@
             // 
             this.txt_password.Location = new System.Drawing.Point(71, 197);
             this.txt_password.Name = "txt_password";
+            this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(141, 20);
             this.txt_password.TabIndex = 4;
             // 
@@ -100,6 +101,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

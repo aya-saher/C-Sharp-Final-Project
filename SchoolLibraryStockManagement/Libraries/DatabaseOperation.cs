@@ -13,7 +13,7 @@ namespace SchoolLibraryStockManagement.Libraries
     {
         public static DataTable get(DataTable table, string query)
         {
-            DbCommand command = DatabaseConnection.getConnection();
+            DbCommand command = DatabaseConnection.SingletonInstance().getConnection();
             command.CommandText = query;
             try
             {
@@ -39,7 +39,7 @@ namespace SchoolLibraryStockManagement.Libraries
         }
         public static DataTable select(DataTable table, string query)
         {
-            DbCommand command = DatabaseConnection.getConnection();
+            DbCommand command = DatabaseConnection.SingletonInstance().getConnection();
             command.CommandText = query;
             try
             {
@@ -60,7 +60,7 @@ namespace SchoolLibraryStockManagement.Libraries
         }
         public static void create(string query)
         {
-            DbCommand command = DatabaseConnection.getConnection();
+            DbCommand command = DatabaseConnection.SingletonInstance().getConnection();
             command.CommandText = query;
 
             try
@@ -80,7 +80,7 @@ namespace SchoolLibraryStockManagement.Libraries
 
         public static void update(string query)
         {
-            DbCommand command = DatabaseConnection.getConnection();
+            DbCommand command = DatabaseConnection.SingletonInstance().getConnection();
             command.CommandText = query;
 
             try
@@ -100,7 +100,7 @@ namespace SchoolLibraryStockManagement.Libraries
 
         public static void delete(string query)
         {
-            DbCommand command = DatabaseConnection.getConnection();
+            DbCommand command = DatabaseConnection.SingletonInstance().getConnection();
             command.CommandText = query;
 
             try

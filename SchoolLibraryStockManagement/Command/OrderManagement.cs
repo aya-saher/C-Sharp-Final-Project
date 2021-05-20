@@ -32,6 +32,7 @@ namespace SchoolLibraryStockManagement.Command
             else return false;
         }
     }
+
     public class InsertOrderItem : ICommand
     {
         private readonly IOrderItem _orderItem;
@@ -55,6 +56,7 @@ namespace SchoolLibraryStockManagement.Command
             else return false;
         }
     }
+
     public class DeleteOrder : ICommand
     {
         private readonly IOrder _order;

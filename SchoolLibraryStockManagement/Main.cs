@@ -8,25 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 using System.Runtime.InteropServices;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Factory;
+
 namespace SchoolLibraryStockManagement
 {
     public partial class Main : Form
     {
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-   (
-       int nLeftRect,     // x-coordinate of upper-left corner
-       int nTopRect,      // y-coordinate of upper-left corner
-       int nRightRect,    // x-coordinate of lower-right corner
-       int nBottomRect,   // y-coordinate of lower-right corner
-       int nWidthEllipse, // height of ellipse
-       int nHeightEllipse // width of ellipse
-   );
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
 
         public User user;
 
@@ -77,7 +77,9 @@ namespace SchoolLibraryStockManagement
 
         private void btn_settings_Click(object sender, EventArgs e)
         {
-            new Settings().ShowDialog();
+            this.Hide();
+            new Settings(user).ShowDialog();
+            this.Close();
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -89,22 +91,10 @@ namespace SchoolLibraryStockManagement
             }
             else
             {
-                switch (user.role)
+                foreach (Permission permission in this.user.user_algorithm.getMainPermissions())
                 {
-                    case "sales_employee":
-                        lbl_users.Enabled = false;
-                        lbl_reports.Enabled = false;
-                        lbl_products.Enabled = true;
-                        lbl_categories.Enabled = false;
-                        lbl_stock_management.Enabled = true;
-                        break;
-                    case "warehouse_employee":
-                        lbl_users.Enabled = false;
-                        lbl_reports.Enabled = false;
-                        lbl_orders.Enabled = false;
-                        lbl_stock_management.Enabled = true;
-
-                        break;
+                    var control = this.Controls.OfType<Label>().FirstOrDefault(c => c.Name == permission.name);
+                    control.Enabled = permission.status;
                 }
 
             }

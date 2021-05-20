@@ -10,19 +10,22 @@ using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
 using SchoolLibraryStockManagement.Command;
+using SchoolLibraryStockManagement.Factory;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class ProductForm : Form
     {
+        private User user;
         public string selected_product;
         private readonly IProduct _product = new IProductReciever();
         private readonly ICategory _category = new ICategoryReciever();
         Invoker _invoker = new Invoker();
 
-        public ProductForm()
+        public ProductForm(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void btn_stock_management_Click(object sender, EventArgs e)
@@ -38,10 +41,12 @@ namespace SchoolLibraryStockManagement
 
             fillCategories();
 
-            btn_delete.Enabled = false;
-            btn_edit.Enabled = false;
-            btn_clear.Enabled = false;
-            txt_price.ReadOnly = true;
+            foreach (Permission permission in this.user.user_algorithm.getProductManagementPermissionsOnLoad())
+            {
+                var control = this.Controls.OfType<Button>().FirstOrDefault(c => c.Name == permission.name);
+                control.Enabled = permission.status;
+            }
+
             txt_quantity.ReadOnly = true;
         }
         private DataTable GEtAllProducts()
@@ -100,12 +105,12 @@ namespace SchoolLibraryStockManagement
         private void dgv_products_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             selected_product = dgv_products.Rows[e.RowIndex].Cells["id"].Value.ToString();
-            btn_delete.Enabled = true;
-            btn_edit.Enabled = true;
-            btn_clear.Enabled = true;
-            btn_add.Enabled = false;
-            txt_price.ReadOnly = false;
-            txt_quantity.ReadOnly = false;
+
+            foreach (Permission permission in this.user.user_algorithm.getProductManagementPermissionsEditing())
+            {
+                var control = this.Controls.OfType<Button>().FirstOrDefault(c => c.Name == permission.name);
+                control.Enabled = permission.status;
+            }
 
             txt_code.Text = dgv_products.Rows[e.RowIndex].Cells["code"].Value.ToString();
             txt_name.Text = dgv_products.Rows[e.RowIndex].Cells["name"].Value.ToString();
@@ -145,12 +150,12 @@ namespace SchoolLibraryStockManagement
                     ((ComboBox)ctrl).SelectedIndex = -1;
             }
 
-            btn_add.Enabled = true;
-            btn_delete.Enabled = false;
-            btn_clear.Enabled = false;
-            btn_edit.Enabled = false;
-            txt_price.ReadOnly = true;
-            txt_quantity.ReadOnly = true;
+
+            foreach (Permission permission in this.user.user_algorithm.getProductManagementPermissionsOnLoad())
+            {
+                var control = this.Controls.OfType<Button>().FirstOrDefault(c => c.Name == permission.name);
+                control.Enabled = permission.status;
+            }
         }
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Factory;
+
 namespace SchoolLibraryStockManagement
 {
     public partial class Login : Form
@@ -37,15 +39,16 @@ namespace SchoolLibraryStockManagement
                 count = Convert.ToInt32(dt.Rows.Count.ToString());
                 if (count != 0)
                 {
-
-
-                    user = new User(username: dt.Rows[0].Field<string>("username"), role: dt.Rows[0].Field<string>("role"));
-                    MessageBox.Show("Welcome to the LIBRARY MANAGEMENT SYSTEM!" + user.role + user.username);
+                    user = new User(id: dt.Rows[0].Field<int>("id"),
+                                    name: dt.Rows[0].Field<string>("name"),
+                                    username: dt.Rows[0].Field<string>("username"),
+                                    password: dt.Rows[0].Field<string>("password"),
+                                    role: dt.Rows[0].Field<string>("role"),
+                                    user_algorithm: new UserFactory(dt.Rows[0].Field<string>("role")).getUserAlgorithm());
+                    MessageBox.Show("Welcome to the LIBRARY MANAGEMENT SYSTEM! " + user.role + " - " + user.username);
 
                     this.Hide();
-                    Main min = new Main(user);
-
-                    min.Show();
+                    new Main(user).Show();
                 }
                 else
                 {
@@ -53,6 +56,11 @@ namespace SchoolLibraryStockManagement
                 }
 
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 11:56 PM
+-- Generation Time: May 20, 2021 at 04:50 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -259,7 +259,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `name`, `password`, `role`, `activated_at`, `deleted_at`) VALUES
-(1, 'aya', 'aya', 'aya', 'super_admin', '2021-05-05 05:28:01', '2021-05-05 05:28:01');
+(1, 'aya', 'Aya', 'secret', 'sales_employee', '2021-05-05 05:28:01', '2021-05-05 05:28:01');
 
 --
 -- Indexes for dumped tables
@@ -327,7 +327,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `products`

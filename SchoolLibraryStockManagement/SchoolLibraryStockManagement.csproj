@@ -64,6 +64,7 @@
     <Compile Include="Command\OrderReciever.cs" />
     <Compile Include="Command\ProductManagement.cs" />
     <Compile Include="Command\ProductReciever.cs" />
+    <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Libraries\DatabaseConnection.cs" />
     <Compile Include="Libraries\DatabaseOperation.cs" />
     <Compile Include="Login.cs">
@@ -81,6 +82,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\StockManagement.cs" />
@@ -135,6 +137,10 @@
     <Compile Include="StockManagementForm.Designer.cs">
       <DependentUpon>StockManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Strategy\SalesEmployee.cs" />
+    <Compile Include="Strategy\SuperAdmin.cs" />
+    <Compile Include="Strategy\UserAlgorithm.cs" />
+    <Compile Include="Strategy\WarehouseEmployee.cs" />
     <Compile Include="TopSellingReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
