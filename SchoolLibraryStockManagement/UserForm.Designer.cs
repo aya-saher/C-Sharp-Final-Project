@@ -38,7 +38,6 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_activation = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.cmb_columns = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
@@ -46,14 +45,13 @@
             this.wareRaio = new System.Windows.Forms.RadioButton();
             this.salesRadio = new System.Windows.Forms.RadioButton();
             this.superRadio = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_username
             // 
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(32, 74);
+            this.lbl_username.Location = new System.Drawing.Point(32, 104);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(55, 13);
             this.lbl_username.TabIndex = 1;
@@ -61,14 +59,14 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(85, 71);
+            this.txt_username.Location = new System.Drawing.Point(85, 101);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(100, 20);
             this.txt_username.TabIndex = 2;
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(85, 106);
+            this.txt_name.Location = new System.Drawing.Point(85, 136);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(100, 20);
             this.txt_name.TabIndex = 4;
@@ -76,7 +74,7 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(32, 109);
+            this.lbl_name.Location = new System.Drawing.Point(32, 139);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(35, 13);
             this.lbl_name.TabIndex = 3;
@@ -84,7 +82,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(85, 141);
+            this.txt_password.Location = new System.Drawing.Point(85, 171);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(100, 20);
             this.txt_password.TabIndex = 6;
@@ -92,7 +90,7 @@
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(32, 144);
+            this.lbl_password.Location = new System.Drawing.Point(32, 174);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(53, 13);
             this.lbl_password.TabIndex = 5;
@@ -101,7 +99,7 @@
             // lbl_role
             // 
             this.lbl_role.AutoSize = true;
-            this.lbl_role.Location = new System.Drawing.Point(32, 180);
+            this.lbl_role.Location = new System.Drawing.Point(32, 215);
             this.lbl_role.Name = "lbl_role";
             this.lbl_role.Size = new System.Drawing.Size(29, 13);
             this.lbl_role.TabIndex = 7;
@@ -109,7 +107,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(219, 69);
+            this.btn_add.Location = new System.Drawing.Point(219, 99);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 9;
@@ -119,7 +117,7 @@
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(219, 104);
+            this.btn_edit.Location = new System.Drawing.Point(219, 134);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(75, 23);
             this.btn_edit.TabIndex = 10;
@@ -128,22 +126,13 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(219, 139);
+            this.btn_delete.Location = new System.Drawing.Point(219, 169);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 11;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // btn_activation
-            // 
-            this.btn_activation.Location = new System.Drawing.Point(219, 175);
-            this.btn_activation.Name = "btn_activation";
-            this.btn_activation.Size = new System.Drawing.Size(75, 23);
-            this.btn_activation.TabIndex = 12;
-            this.btn_activation.Text = "Activation";
-            this.btn_activation.UseVisualStyleBackColor = true;
             // 
             // btn_search
             // 
@@ -182,7 +171,7 @@
             // wareRaio
             // 
             this.wareRaio.AutoSize = true;
-            this.wareRaio.Location = new System.Drawing.Point(229, 220);
+            this.wareRaio.Location = new System.Drawing.Point(276, 211);
             this.wareRaio.Name = "wareRaio";
             this.wareRaio.Size = new System.Drawing.Size(125, 17);
             this.wareRaio.TabIndex = 42;
@@ -193,7 +182,7 @@
             // salesRadio
             // 
             this.salesRadio.AutoSize = true;
-            this.salesRadio.Location = new System.Drawing.Point(126, 220);
+            this.salesRadio.Location = new System.Drawing.Point(173, 211);
             this.salesRadio.Name = "salesRadio";
             this.salesRadio.Size = new System.Drawing.Size(97, 17);
             this.salesRadio.TabIndex = 41;
@@ -205,7 +194,7 @@
             // 
             this.superRadio.AutoSize = true;
             this.superRadio.Checked = true;
-            this.superRadio.Location = new System.Drawing.Point(35, 220);
+            this.superRadio.Location = new System.Drawing.Point(85, 211);
             this.superRadio.Name = "superRadio";
             this.superRadio.Size = new System.Drawing.Size(82, 17);
             this.superRadio.TabIndex = 40;
@@ -213,14 +202,6 @@
             this.superRadio.Tag = "type";
             this.superRadio.Text = "super admin";
             this.superRadio.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(85, 180);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 39;
             // 
             // UserForm
             // 
@@ -230,12 +211,10 @@
             this.Controls.Add(this.wareRaio);
             this.Controls.Add(this.salesRadio);
             this.Controls.Add(this.superRadio);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.dgv_users);
-            this.Controls.Add(this.btn_activation);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
@@ -267,7 +246,6 @@
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button btn_activation;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.ComboBox cmb_columns;
         private System.Windows.Forms.TextBox txt_search;
@@ -275,6 +253,5 @@
         private System.Windows.Forms.RadioButton wareRaio;
         private System.Windows.Forms.RadioButton salesRadio;
         private System.Windows.Forms.RadioButton superRadio;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
