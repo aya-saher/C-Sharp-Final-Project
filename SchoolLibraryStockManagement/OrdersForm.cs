@@ -18,14 +18,6 @@ namespace SchoolLibraryStockManagement
         {
             InitializeComponent();
         }
-        private DataTable GetAllOrders() 
-        {
-            return _order.GetAllOrders();
-        }
-        private DataTable GetOrderItems(string orderId)
-        {
-            return _orderItem.GetOrderItems(selected_order);
-        }
         private void clearOrderitemsFields()
         {
             dGVOrderItems.ClearSelection();
@@ -55,7 +47,7 @@ namespace SchoolLibraryStockManagement
 
         private void OrdersForm_Load(object sender, EventArgs e)
         {
-            dGVOrders.DataSource = GetAllOrders();
+            dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
             fillColumns();
         }
 
@@ -65,7 +57,7 @@ namespace SchoolLibraryStockManagement
             {
                 selected_order = dGVOrders.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 tB_referenceNum.Text = dGVOrders.Rows[e.RowIndex].Cells["reference number"].Value.ToString();
-                dGVOrderItems.DataSource = GetOrderItems(selected_order);
+                dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, selected_order));
                 if (dGVOrders.Rows[e.RowIndex].Cells["reference number"].Value.ToString() != "")
                 {
                     btnDeleteOrder.Enabled = true;
@@ -83,17 +75,17 @@ namespace SchoolLibraryStockManagement
         {
             if (tBSearch.Text.Length > 0 && cB_search.SelectedIndex > -1)
             {
-                dGVOrders.DataSource = _order.Search((cB_search.SelectedItem).ToString(), tBSearch.Text);
+                dGVOrders.DataSource = _invoker.Invoke(new SearchOrder(_order,(cB_search.SelectedItem).ToString(), tBSearch.Text));
             }
             else {
-                dGVOrders.DataSource = GetAllOrders();
+                dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
             }
         }
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
             _invoker.Invoke(new DeleteOrder(_order, _orderItem,selected_order));
-            dGVOrders.DataSource = GetAllOrders();
+            dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
             clear();
         }
 
@@ -119,7 +111,7 @@ namespace SchoolLibraryStockManagement
         {
             clear();
             clearOrderitemsFields();
-            dGVOrders.DataSource = GetAllOrders();
+            dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
         }
 
         private void btnEditOrderItem_Click(object sender, EventArgs e)
@@ -130,8 +122,8 @@ namespace SchoolLibraryStockManagement
             if (tB_Quantity.Text != "" && tB_Quantity.Text != "0" && Convert.ToInt32(tB_Quantity.Text) < product_quantity && product_quantity > 0)
             {
                 _invoker.Invoke(new UpdateOrderItems(_orderItem, _order, selected_order, selected_order_item, tB_Quantity.Text));
-                dGVOrderItems.DataSource = GetOrderItems(selected_order);
-                dGVOrders.DataSource = GetAllOrders();
+                dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, selected_order));
+                dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
             }
             else if (product_quantity < 0)
             {
@@ -147,8 +139,8 @@ namespace SchoolLibraryStockManagement
         {
             int count = dGVOrderItems.Rows.Count;
             _invoker.Invoke(new DeleteOrderItemsFROMOrder(_orderItem , _order,selected_order_item , selected_order  , count));
-            dGVOrderItems.DataSource = GetOrderItems(selected_order);
-            dGVOrders.DataSource = GetAllOrders();
+            dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, selected_order));
+            dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
             clearOrderitemsFields();
         }
 
@@ -170,8 +162,8 @@ namespace SchoolLibraryStockManagement
             if (!tB_referenceNum.Text.Contains(".")) { 
             if (tB_referenceNum.Text.Length > 0 && tB_referenceNum.Text.Length == 6) {
                 _invoker.Invoke(new UpdateOrder(_order, selected_order, tB_referenceNum.Text));
-                dGVOrders.DataSource = GetAllOrders();
-            }
+                dGVOrders.DataSource = _invoker.Invoke(new GetAllOrders(_order));
+                }
             else
                MessageBox.Show("Reference number must contain 6 char");
             }

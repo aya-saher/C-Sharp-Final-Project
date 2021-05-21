@@ -35,7 +35,7 @@ namespace SchoolLibraryStockManagement
 
         private void Product_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = _product.SelectAll();
+            dgv_products.DataSource = _invoker.Invoke(new GetAllProducts(_product));
 
             fillColumns();
 
@@ -48,10 +48,6 @@ namespace SchoolLibraryStockManagement
             }
 
             txt_quantity.ReadOnly = true;
-        }
-        private DataTable GEtAllProducts()
-        {
-           return _product.SelectAll();
         }
 
         public void fillColumns()
@@ -69,7 +65,7 @@ namespace SchoolLibraryStockManagement
             table.Columns.Add("name", typeof(string));
             cmb_categories.ValueMember = "id";
             cmb_categories.DisplayMember = "name";
-            cmb_categories.DataSource = _category.GetAll(table);
+            cmb_categories.DataSource = _invoker.Invoke(new GetAllCategories(_category,table));
         }
 
         private void btn_add_category_Click(object sender, EventArgs e)
@@ -82,11 +78,11 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = _product.Search((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
+                dgv_products.DataSource = _invoker.Invoke(new SearchProduct(_product,(cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
             }
             else
             {
-                dgv_products.DataSource = GEtAllProducts();
+                dgv_products.DataSource = _invoker.Invoke(new GetAllProducts(_product));
             }
         }
 
@@ -99,7 +95,7 @@ namespace SchoolLibraryStockManagement
                txt_quantity.Text,
                cmb_categories.SelectedValue.ToString()));
 
-            dgv_products.DataSource = GEtAllProducts();
+            dgv_products.DataSource = _invoker.Invoke(new GetAllProducts(_product));
         }
 
         private void dgv_products_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -123,7 +119,7 @@ namespace SchoolLibraryStockManagement
         private void btn_delete_Click(object sender, EventArgs e)
         {
             _invoker.Invoke(new DeleteProduct(_product,selected_product));
-            dgv_products.DataSource = GEtAllProducts();
+            dgv_products.DataSource = _invoker.Invoke(new GetAllProducts(_product));
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
@@ -137,7 +133,7 @@ namespace SchoolLibraryStockManagement
                cmb_categories.SelectedValue.ToString()
             ));
 
-            dgv_products.DataSource = GEtAllProducts();
+            dgv_products.DataSource = _invoker.Invoke(new GetAllProducts(_product));
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
@@ -149,7 +145,6 @@ namespace SchoolLibraryStockManagement
                 else if (ctrl.GetType() == typeof(ComboBox))
                     ((ComboBox)ctrl).SelectedIndex = -1;
             }
-
 
             foreach (Permission permission in this.user.user_algorithm.getProductManagementPermissionsOnLoad())
             {

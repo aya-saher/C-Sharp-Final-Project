@@ -1,11 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace SchoolLibraryStockManagement.Command
 {
+    public class GetAllOrders : ICommand2
+    {
+        private readonly IOrder _order;
+        public GetAllOrders(IOrder order)
+        {
+            _order = order;
+        }
+        public DataTable Execute()
+        {
+            return _order.GetAllOrders();
+        }
+        public bool CanExecute()
+        {
+            return true;
+        }
+    }
+        public class GetOrderItems : ICommand2
+    {
+        private readonly IOrderItem _orderItem;
+        private string _order_id;
+        public GetOrderItems(IOrderItem orderItem ,string order_id)
+        {
+            _orderItem = orderItem;
+            _order_id = order_id;
+        }
+        public DataTable Execute()
+        {
+            return _orderItem.GetOrderItems(_order_id);
+        }
+        public bool CanExecute()
+        {
+            if (_order_id != "")
+                return true;
+            else return false;
+        }
+    }
+    public class SearchOrder : ICommand2
+    {
+        private readonly IOrder _order;
+        private string _column, _txt;
+        public SearchOrder(IOrder order , string column, string txt)
+        {
+            _order = order;
+            _column = column;
+            _txt = txt;
+        }
+        public DataTable Execute()
+        {
+            return _order.Search(_column, _txt);
+        }
+        public bool CanExecute()
+        {
+            if (_column != "" && _txt != "")
+                return true;
+            else return false;
+        }
+    }
     public class InsertOrder : ICommand
     {
         private readonly IOrderItem _orderItem;

@@ -16,17 +16,15 @@ namespace SchoolLibraryStockManagement
     public partial class OutofStockReportForm : Form
     {
         private readonly IReport _report = new IReportReciever();
+        Invoker _invoker = new Invoker();
+
         public OutofStockReportForm()
         {
             InitializeComponent();
         }
-        public DataTable GetOutofStock()
-        {
-            return _report.GetOutofStock();
-        }
         private void OutofStockReportForm_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = GetOutofStock();
+            dgv_products.DataSource = _invoker.Invoke(new GetOutofStock(_report));
 
             fillColumns();
         }
@@ -43,11 +41,11 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = _report.SearchOutofStock((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
+                dgv_products.DataSource = _invoker.Invoke(new SearchOutofStock(_report,(cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
             }
             else
             {
-                dgv_products.DataSource = GetOutofStock();
+                dgv_products.DataSource = _invoker.Invoke(new GetOutofStock(_report));
             }
         }
     }

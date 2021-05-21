@@ -16,18 +16,15 @@ namespace SchoolLibraryStockManagement
     public partial class TopSellingReportForm : Form
     {
         private readonly IReport _report = new IReportReciever();
+        Invoker _invoker = new Invoker();
 
         public TopSellingReportForm()
         {
             InitializeComponent();
         }
-        public DataTable GetTopSelling()
-        {
-            return _report.GetTopSelling();
-        }
         private void TopSellingReportForm_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = GetTopSelling();
+            dgv_products.DataSource = _invoker.Invoke(new GetTopSelling(_report));
 
             fillColumns();
         }
@@ -44,11 +41,11 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = _report.SearchTopSelling((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
+                dgv_products.DataSource = _invoker.Invoke(new SearchTopSelling(_report , (cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
             }
             else
             {
-                dgv_products.DataSource = GetTopSelling();
+                dgv_products.DataSource = _invoker.Invoke(new GetTopSelling(_report));
             }
         }
     }

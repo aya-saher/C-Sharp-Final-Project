@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
 using SchoolLibraryStockManagement.Command;
 
@@ -16,6 +15,7 @@ namespace SchoolLibraryStockManagement
     public partial class ProductMovementReportForm : Form
     {
         private readonly IReport _report = new IReportReciever();
+        Invoker _invoker = new Invoker();
 
         public ProductMovementReportForm()
         {
@@ -39,7 +39,7 @@ namespace SchoolLibraryStockManagement
         {
             if (txt_search.Text.Length > 0)
             {
-                dgv_products.DataSource = _report.GetProductMovement((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString());
+                dgv_products.DataSource = _invoker.Invoke(new GetProductMovement(_report,(cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
             }
             else
             {

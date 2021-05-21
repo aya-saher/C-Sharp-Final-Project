@@ -56,12 +56,14 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Command\CategoryManagement.cs" />
     <Compile Include="Command\CategoryReciever.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\Invoker.cs" />
     <Compile Include="Command\OrderItemReciever.cs" />
     <Compile Include="Command\OrderManagement.cs" />
     <Compile Include="Command\OrderReciever.cs" />
+    <Compile Include="Command\ReportManagement.cs" />
     <Compile Include="Command\ReportReciever.cs" />
     <Compile Include="Command\ProductManagement.cs" />
     <Compile Include="Command\ProductReciever.cs" />

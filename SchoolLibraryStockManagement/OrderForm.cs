@@ -21,13 +21,7 @@ namespace SchoolLibraryStockManagement
             InitializeComponent();
             this._user = user;
         }
-        private DataTable GetOrderItems() {
-            return _orderItem.GetOrderItems("0");
-        }
-        private DataTable SelectProductsHasQuantity()
-        {
-            return _product.SelectProductsHasQuantity();
-        }
+        
         private void clearFields() {
             cBSearch.SelectedIndex = -1;
             tBSearch.Clear();
@@ -47,8 +41,8 @@ namespace SchoolLibraryStockManagement
         private void OrderForm_Load(object sender, EventArgs e)
         {
              fillColumns();
-            dGVProducts.DataSource = SelectProductsHasQuantity();
-            dGVOrderItems.DataSource = GetOrderItems();
+            dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
+            dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
             if (dGVProducts.Rows.Count < 1)
             {
                 dGVOrderItems.DataSource = new DataTable();
@@ -79,8 +73,8 @@ namespace SchoolLibraryStockManagement
                     if (tBQuantity.Text != "0" && Convert.ToDouble(tBQuantity.Text) > 0 && Convert.ToInt32(tBQuantity.Text) < product_q)
                     {
                         _invoker.Invoke(new InsertOrderItem(_orderItem , "0" , selected_product, tBQuantity.Text, product_price));
-                        dGVOrderItems.DataSource = GetOrderItems();
-                        dGVProducts.DataSource = SelectProductsHasQuantity();
+                        dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
+                        dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
                         clearOrderFields(true, true);
                         clearFields();
                     }
@@ -122,8 +116,8 @@ namespace SchoolLibraryStockManagement
         private void bClearProducts_Click(object sender, EventArgs e)
         {
             clearFields();
-            dGVProducts.DataSource = SelectProductsHasQuantity();
-            dGVOrderItems.DataSource = GetOrderItems();
+            dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
+            dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
             if (dGVOrderItems.Rows.Count > 1)
             {
                 clearOrderFields(true, true);
@@ -143,11 +137,11 @@ namespace SchoolLibraryStockManagement
         {
             if (tBSearch.Text.Length > 0 && cBSearch.SelectedIndex>-1)
             {
-                dGVProducts.DataSource = _product.SearchHasQuantity((cBSearch.SelectedItem).ToString(), tBSearch.Text.ToString());
+                dGVProducts.DataSource = _invoker.Invoke(new SearchProductsHasQuantity(_product,(cBSearch.SelectedItem).ToString(), tBSearch.Text.ToString()));
             }
             else
             {
-                dGVProducts.DataSource = SelectProductsHasQuantity();
+                dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
             }
         }
 
@@ -155,7 +149,7 @@ namespace SchoolLibraryStockManagement
         {
             _invoker.Invoke(new InsertOrder(_orderItem, _order , "0" , _user.id.ToString()));
             dGVOrderItems.DataSource = new DataTable();
-            dGVProducts.DataSource = SelectProductsHasQuantity();
+            dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
             MessageBox.Show("Order has Added Successfully");
             clearFields();
             clearOrderFields(false , false);
@@ -164,8 +158,8 @@ namespace SchoolLibraryStockManagement
         private void btnDeleteOrderItem_Click(object sender, EventArgs e)
         {
             _invoker.Invoke(new DeleteOrderItems(_orderItem,selected_order));
-            dGVOrderItems.DataSource = GetOrderItems();
-            dGVProducts.DataSource = SelectProductsHasQuantity();
+            dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
+            dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
             if (dGVOrderItems.Rows.Count < 2)
             {
                 dGVOrderItems.DataSource = new DataTable();
@@ -179,8 +173,8 @@ namespace SchoolLibraryStockManagement
             if (tBQuantity.Text != "" && tBQuantity.Text != "0" && Convert.ToInt32(tBQuantity.Text) < Convert.ToInt32(product_quantity) +1)
             {
                 _invoker.Invoke(new UpdateOrderItem(_orderItem,selected_order, tBQuantity.Text));
-                dGVOrderItems.DataSource = GetOrderItems();
-                dGVProducts.DataSource = SelectProductsHasQuantity();
+                dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
+                dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
             }
         }
 
@@ -208,8 +202,8 @@ namespace SchoolLibraryStockManagement
         {
             _invoker.Invoke(new DeleteOrder(_order,_orderItem, "0"));
             dGVOrderItems.DataSource = new DataTable();
-            dGVOrderItems.DataSource = GetOrderItems();
-            dGVProducts.DataSource = SelectProductsHasQuantity();
+            dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
+            dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
             clearOrderFields(false, false);
             clearFields();
         }
