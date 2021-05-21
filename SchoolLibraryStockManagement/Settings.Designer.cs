@@ -39,12 +39,17 @@
             // 
             // btn_settings_update
             // 
+            this.btn_settings_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
+            this.btn_settings_update.FlatAppearance.BorderSize = 0;
+            this.btn_settings_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_settings_update.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settings_update.ForeColor = System.Drawing.Color.White;
             this.btn_settings_update.Location = new System.Drawing.Point(84, 213);
             this.btn_settings_update.Name = "btn_settings_update";
             this.btn_settings_update.Size = new System.Drawing.Size(90, 23);
             this.btn_settings_update.TabIndex = 8;
             this.btn_settings_update.Text = "Update";
-            this.btn_settings_update.UseVisualStyleBackColor = true;
+            this.btn_settings_update.UseVisualStyleBackColor = false;
             this.btn_settings_update.Click += new System.EventHandler(this.btn_settings_update_Click);
             // 
             // txt_name

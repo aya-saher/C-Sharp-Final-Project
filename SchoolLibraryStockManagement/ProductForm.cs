@@ -152,5 +152,10 @@ namespace SchoolLibraryStockManagement
                 control.Enabled = permission.status;
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
