@@ -69,6 +69,8 @@
     <Compile Include="Command\ProductReciever.cs" />
     <Compile Include="Command\SettingReciever.cs" />
     <Compile Include="Command\UpdateSetting.cs" />
+    <Compile Include="Command\UserManagement.cs" />
+    <Compile Include="Command\UserRecievercs.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Libraries\DatabaseConnection.cs" />
     <Compile Include="Libraries\DatabaseOperation.cs" />
