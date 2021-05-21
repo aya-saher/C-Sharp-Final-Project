@@ -154,3 +154,4 @@ E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryS
 E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
 E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
 E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.csprojAssemblyReference.cache
+E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OrderForm.resources
