@@ -36,6 +36,7 @@ namespace SchoolLibraryStockManagement
                 string query = new User().login(txt_username.Text, txt_password.Text);
 
                 dt = DatabaseOperation.select(dt, query);
+                Console.WriteLine(dt);
                 count = Convert.ToInt32(dt.Rows.Count.ToString());
                 if (count != 0)
                 {

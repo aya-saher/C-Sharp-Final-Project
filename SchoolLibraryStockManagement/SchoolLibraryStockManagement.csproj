@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SchoolLibraryStockManagement</RootNamespace>
     <AssemblyName>SchoolLibraryStockManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -72,6 +72,7 @@
     <Compile Include="Command\UserManagement.cs" />
     <Compile Include="Command\UserRecievercs.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Helper\Roles.cs" />
     <Compile Include="Libraries\DatabaseConnection.cs" />
     <Compile Include="Libraries\DatabaseOperation.cs" />
     <Compile Include="Login.cs">
