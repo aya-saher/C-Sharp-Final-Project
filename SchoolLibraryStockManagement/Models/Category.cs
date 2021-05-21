@@ -30,7 +30,7 @@ namespace SchoolLibraryStockManagement.Models
         public string update(string id, string name, string description)
         {
             string query = "UPDATE categories SET ";
-            query += String.Format("name = '{1}', description = '{2}'", name, description);
+            query += String.Format("name = '{0}', description = '{1}'", name, description);
             query += String.Format(" WHERE id = {0}", id);
             return query;
         }
