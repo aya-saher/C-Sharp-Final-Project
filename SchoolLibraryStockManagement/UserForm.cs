@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
 using SchoolLibraryStockManagement.Models;
+using SchoolLibraryStockManagement.Command;
 
 namespace SchoolLibraryStockManagement
 {
     public partial class UserForm : Form
     {
         public string selected_user;
+        private readonly IUser _user = new IUserReciever();
+        Invoker _invoker = new Invoker();
 
         public UserForm()
         {
@@ -33,8 +36,7 @@ namespace SchoolLibraryStockManagement
         }
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            DatabaseOperation.delete(new User().delete(selected_user));
-            dgv_users.DataSource = DatabaseOperation.get(new DataTable(), (new User()).all());
+            dgv_users.DataSource =  _invoker.Invoke(new DeleteUserThenGetUsers(_user,selected_user));
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -76,29 +78,21 @@ namespace SchoolLibraryStockManagement
                         type = "warehouse_employee";
                     }
 
-
-                    string query = (new User().insert(
-                    txt_username.Text,
+                    dgv_users.DataSource = _invoker.Invoke(new InsertUserThenGetUsers(_user ,txt_username.Text,
                     txt_name.Text,
                     txt_password.Text,
                     type.ToString())
 //comboBox1.SelectedValue.ToString())
-);
-                    DatabaseOperation.create(query);
-
-                    dgv_users.DataSource = DatabaseOperation.get(new DataTable(), (new User()).all());
-
-
+                 );
                 }
             }
-
 
         }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
             combobox_roles();
-            dgv_users.DataSource = DatabaseOperation.get(new DataTable(), (new User()).all());
+            dgv_users.DataSource = _invoker.Invoke(new GetAllUsers(_user));
             fillColumns();
 
         }
@@ -112,7 +106,35 @@ namespace SchoolLibraryStockManagement
             }
         }
 
-        private void dgv_users_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            dgv_users.DataSource = _invoker.Invoke(new IUpdateUserThenGetUsers(_user , selected_user,
+              txt_username.Text,
+              txt_name.Text,
+              txt_password.Text,
+              comboBox1.SelectedValue.ToString()));
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            if (txt_search.Text.Length > 0)
+            {
+                dgv_users.DataSource = _invoker.Invoke(new SearchUser(_user, (cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
+            }
+            else
+            {
+                dgv_users.DataSource = _invoker.Invoke(new GetAllUsers(_user));
+            }
+        }
+
+        private void UserForm_Load_1(object sender, EventArgs e)
+        {
+            combobox_roles();
+            dgv_users.DataSource = _invoker.Invoke(new GetAllUsers(_user));
+            fillColumns();
+        }
+
+        private void dgv_users_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected_user = dgv_users.Rows[e.RowIndex].Cells["id"].Value.ToString();
             btn_delete.Enabled = true;
@@ -127,40 +149,6 @@ namespace SchoolLibraryStockManagement
             txt_password.Text = dgv_users.Rows[e.RowIndex].Cells["password"].Value.ToString();
 
             comboBox1.SelectedValue = dgv_users.Rows[e.RowIndex].Cells["role"].Value.ToString();
-        }
-
-        private void btn_edit_Click(object sender, EventArgs e)
-        {
-            string query = (new User()).update(
-              selected_user,
-              txt_username.Text,
-              txt_name.Text,
-              txt_password.Text,
-              comboBox1.SelectedValue.ToString());
-
-            DatabaseOperation.update(query);
-
-            dgv_users.DataSource = DatabaseOperation.get(new DataTable(), (new User()).all());
-        }
-
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            if (txt_search.Text.Length > 0)
-            {
-                Console.WriteLine(new User().search(cmb_columns.SelectedItem.ToString(), txt_search.Text));
-                dgv_users.DataSource = DatabaseOperation.get(new DataTable(), new User().search((cmb_columns.SelectedItem).ToString(), txt_search.Text.ToString()));
-            }
-            else
-            {
-                dgv_users.DataSource = DatabaseOperation.get(new DataTable(), new User().all());
-            }
-        }
-
-        private void UserForm_Load_1(object sender, EventArgs e)
-        {
-            combobox_roles();
-            dgv_users.DataSource = DatabaseOperation.get(new DataTable(), (new User()).all());
-            fillColumns();
         }
     }
 }

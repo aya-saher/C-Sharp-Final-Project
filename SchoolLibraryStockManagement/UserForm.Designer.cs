@@ -153,6 +153,7 @@
             this.btn_search.TabIndex = 34;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // cmb_columns
             // 
@@ -176,6 +177,7 @@
             this.dgv_users.Name = "dgv_users";
             this.dgv_users.Size = new System.Drawing.Size(364, 147);
             this.dgv_users.TabIndex = 31;
+            this.dgv_users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_users_CellClick);
             // 
             // wareRaio
             // 

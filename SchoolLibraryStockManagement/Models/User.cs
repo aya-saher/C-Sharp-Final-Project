@@ -35,7 +35,6 @@ namespace SchoolLibraryStockManagement.Models
             this.user_algorithm = user_algorithm;
         }
 
-
         public string login(string userName, string password)
         {
             return "SELECT id, name, username, password, role FROM users WHERE username = '" + userName + "' and password ='" + password + "'";
@@ -54,7 +53,7 @@ namespace SchoolLibraryStockManagement.Models
         public string insert(string username, string name, string password, string role)
         {
 
-            string query = "INSERT INTO users(usrename, name, password, role)";
+            string query = "INSERT INTO users(username, name, password, role)";
 
             query += String.Format(" VALUES ('{0}','{1}','{2}','{3}')", username, name, password, role);
             return query;
