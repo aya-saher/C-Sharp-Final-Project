@@ -42,9 +42,7 @@
             this.cmb_columns = new System.Windows.Forms.ComboBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dgv_users = new System.Windows.Forms.DataGridView();
-            this.wareRaio = new System.Windows.Forms.RadioButton();
-            this.salesRadio = new System.Windows.Forms.RadioButton();
-            this.superRadio = new System.Windows.Forms.RadioButton();
+            this.cmb_roles = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_users)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +121,7 @@
             this.btn_edit.TabIndex = 10;
             this.btn_edit.Text = "Edit";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_delete
             // 
@@ -168,49 +167,20 @@
             this.dgv_users.TabIndex = 31;
             this.dgv_users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_users_CellClick);
             // 
-            // wareRaio
+            // cmb_roles
             // 
-            this.wareRaio.AutoSize = true;
-            this.wareRaio.Location = new System.Drawing.Point(276, 211);
-            this.wareRaio.Name = "wareRaio";
-            this.wareRaio.Size = new System.Drawing.Size(125, 17);
-            this.wareRaio.TabIndex = 42;
-            this.wareRaio.Tag = "type";
-            this.wareRaio.Text = "warehouse employee";
-            this.wareRaio.UseVisualStyleBackColor = true;
-            // 
-            // salesRadio
-            // 
-            this.salesRadio.AutoSize = true;
-            this.salesRadio.Location = new System.Drawing.Point(173, 211);
-            this.salesRadio.Name = "salesRadio";
-            this.salesRadio.Size = new System.Drawing.Size(97, 17);
-            this.salesRadio.TabIndex = 41;
-            this.salesRadio.Tag = "type";
-            this.salesRadio.Text = "sales employee";
-            this.salesRadio.UseVisualStyleBackColor = true;
-            // 
-            // superRadio
-            // 
-            this.superRadio.AutoSize = true;
-            this.superRadio.Checked = true;
-            this.superRadio.Location = new System.Drawing.Point(85, 211);
-            this.superRadio.Name = "superRadio";
-            this.superRadio.Size = new System.Drawing.Size(82, 17);
-            this.superRadio.TabIndex = 40;
-            this.superRadio.TabStop = true;
-            this.superRadio.Tag = "type";
-            this.superRadio.Text = "super admin";
-            this.superRadio.UseVisualStyleBackColor = true;
+            this.cmb_roles.FormattingEnabled = true;
+            this.cmb_roles.Location = new System.Drawing.Point(85, 207);
+            this.cmb_roles.Name = "cmb_roles";
+            this.cmb_roles.Size = new System.Drawing.Size(100, 21);
+            this.cmb_roles.TabIndex = 35;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 248);
-            this.Controls.Add(this.wareRaio);
-            this.Controls.Add(this.salesRadio);
-            this.Controls.Add(this.superRadio);
+            this.Controls.Add(this.cmb_roles);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);
@@ -250,8 +220,6 @@
         private System.Windows.Forms.ComboBox cmb_columns;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.DataGridView dgv_users;
-        private System.Windows.Forms.RadioButton wareRaio;
-        private System.Windows.Forms.RadioButton salesRadio;
-        private System.Windows.Forms.RadioButton superRadio;
+        private System.Windows.Forms.ComboBox cmb_roles;
     }
 }

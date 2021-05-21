@@ -45,8 +45,7 @@ namespace SchoolLibraryStockManagement
                 _invoker.Invoke(new UpdateSetting(_setting,this.user.id, txt_name.Text, txt_username.Text, txt_password.Text));
                 MessageBox.Show("Updated Successfully!!");
 
-                this.Hide();
-                new Main(user).Show();
+                this.Close();
             }
         }
 
