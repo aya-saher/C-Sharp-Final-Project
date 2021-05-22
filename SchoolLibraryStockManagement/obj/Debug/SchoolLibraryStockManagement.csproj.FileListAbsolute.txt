@@ -184,3 +184,7 @@ C:\Users\USB\Downloads\Aya Saher\C-Sharp-Final-Project\SchoolLibraryStockManagem
 E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\en-CA\SchoolLibraryStockManagement.resources.dll
 E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.en-CA.resources
 E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\en-CA\SchoolLibraryStockManagement.resources.dll
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\en-CA\SchoolLibraryStockManagement.resources.dll
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.OrderForm.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.en-CA.resources
+D:\Collage\8th\C Sharp\Final Project\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\en-CA\SchoolLibraryStockManagement.resources.dll

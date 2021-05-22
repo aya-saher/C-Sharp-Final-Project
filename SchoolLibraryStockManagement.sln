@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolLibraryStockManagement", "SchoolLibraryStockManagement\SchoolLibraryStockManagement.csproj", "{0CCF3212-9122-46AB-B62C-F629AE87DEAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSchoolLibrary", "UnitTestSchoolLibrary\UnitTestSchoolLibrary.csproj", "{91957417-D69E-4A27-B9DA-7697746A1C4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{0CCF3212-9122-46AB-B62C-F629AE87DEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CCF3212-9122-46AB-B62C-F629AE87DEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CCF3212-9122-46AB-B62C-F629AE87DEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91957417-D69E-4A27-B9DA-7697746A1C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91957417-D69E-4A27-B9DA-7697746A1C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91957417-D69E-4A27-B9DA-7697746A1C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91957417-D69E-4A27-B9DA-7697746A1C4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAB69D16-A4EE-44A3-9BD0-FE7465664CE0}
 	EndGlobalSection
 EndGlobal

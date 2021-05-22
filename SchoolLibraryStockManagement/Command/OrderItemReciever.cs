@@ -19,7 +19,7 @@ namespace SchoolLibraryStockManagement.Command
         void DeleteOrderById(string order_id);
         string GetTotalPrice(string order_id);
     }
-    class IOrderItemReciever : IOrderItem
+    public class IOrderItemReciever : IOrderItem
     {
         public DataTable GetOrderItems(string order_id)
         {

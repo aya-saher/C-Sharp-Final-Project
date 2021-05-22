@@ -42,19 +42,14 @@ namespace SchoolLibraryStockManagement
         {
              fillColumns();
             dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
-            dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
+            _invoker.Invoke(new DeleteOrderItemsByOrderId(_order, _orderItem, "0"));
+            dGVOrderItems.DataSource = new DataTable();
             if (dGVProducts.Rows.Count < 1)
             {
                 dGVOrderItems.DataSource = new DataTable();
                 MessageBox.Show("Sorry! There is no product that you can order");
             }
-            if (dGVOrderItems.Rows.Count > 1)
-            {
-                clearOrderFields(true, true);
-            }
-            else {
-                dGVOrderItems.DataSource = new DataTable();
-            }
+            clearOrderFields(false, false);
         }
         public void fillColumns()
         {
@@ -72,7 +67,7 @@ namespace SchoolLibraryStockManagement
                     var product_q = Convert.ToInt32(product_quantity) + 1;
                     if (tBQuantity.Text != "0" && Convert.ToDouble(tBQuantity.Text) > 0 && Convert.ToInt32(tBQuantity.Text) < product_q)
                     {
-                        _invoker.Invoke(new InsertOrderItem(_orderItem , "0" , selected_product, tBQuantity.Text, product_price));
+                        _invoker.Invoke(new InsertOrderItem(_orderItem , "0" , selected_product, tBQuantity.Text, product_price , product_q));
                         dGVOrderItems.DataSource = _invoker.Invoke(new GetOrderItems(_orderItem, "0"));
                         dGVProducts.DataSource = _invoker.Invoke(new GetProductsHasQuantity(_product));
                         clearOrderFields(true, true);

@@ -94,13 +94,15 @@ namespace SchoolLibraryStockManagement.Command
     {
         private readonly IOrderItem _orderItem;
         private string _order_id, _product_id, _quantity, _price;
-        public InsertOrderItem(IOrderItem orderItem, string order_id, string product_id, string quantity, string price)
+        private int _product_q;
+        public InsertOrderItem(IOrderItem orderItem, string order_id, string product_id, string quantity, string price, int product_q)
         {
             _orderItem = orderItem;
             _order_id = order_id;
             _product_id = product_id;
             _quantity = quantity;
             _price = price;
+            _product_q = product_q;
         }
         public void Execute()
         {
@@ -108,7 +110,8 @@ namespace SchoolLibraryStockManagement.Command
         }
         public bool CanExecute()
         {
-            if (_order_id != "" && _product_id != "" && _quantity != "" && _price != "")
+            if (_order_id != "" && _product_id != "" && _quantity != "" && _price != "" && !_quantity.Contains(".") && _quantity != "0" &&
+                Convert.ToDouble(_quantity) > 0 && Convert.ToDouble(_quantity) < _product_q)
                 return true;
             else return false;
         }
@@ -151,6 +154,29 @@ namespace SchoolLibraryStockManagement.Command
         public void Execute()
         {
             _orderItem.Delete(_id);
+        }
+        public bool CanExecute()
+        {
+            if (_id != "")
+                return true;
+            else
+                return false;
+        }
+    }
+    public class DeleteOrderItemsByOrderId : ICommand
+    {
+        private readonly IOrder _order;
+        private readonly IOrderItem _orderItem;
+        private string _id;
+        public DeleteOrderItemsByOrderId(IOrder order, IOrderItem orderItem, string id)
+        {
+            _order = order;
+            _orderItem = orderItem;
+            _id = id;
+        }
+        public void Execute()
+        {
+            _orderItem.DeleteOrderById(_id);
         }
         public bool CanExecute()
         {
