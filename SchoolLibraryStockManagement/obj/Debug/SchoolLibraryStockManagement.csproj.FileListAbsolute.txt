@@ -181,3 +181,6 @@ C:\Users\USB\Downloads\Aya Saher\C-Sharp-Final-Project\SchoolLibraryStockManagem
 C:\Users\USB\Downloads\Aya Saher\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.exe
 C:\Users\USB\Downloads\Aya Saher\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.pdb
 >>>>>>> a0544e82d8e4453385a5b6434c73d5cbcf7baa21
+E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\bin\Debug\en-CA\SchoolLibraryStockManagement.resources.dll
+E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\SchoolLibraryStockManagement.Main.en-CA.resources
+E:\Documents\8th sem\C#\others commits\21-5\C-Sharp-Final-Project\SchoolLibraryStockManagement\obj\Debug\en-CA\SchoolLibraryStockManagement.resources.dll

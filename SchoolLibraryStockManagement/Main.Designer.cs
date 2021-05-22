@@ -29,51 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lbl_products = new System.Windows.Forms.Label();
             this.lbl_categories = new System.Windows.Forms.Label();
             this.lbl_users = new System.Windows.Forms.Label();
             this.lbl_orders = new System.Windows.Forms.Label();
             this.lbl_reports = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lbl_stock_management = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_settings = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
             // 
             // lbl_products
             // 
@@ -105,17 +81,31 @@
             this.lbl_reports.Name = "lbl_reports";
             this.lbl_reports.Click += new System.EventHandler(this.lbl_reports_Click);
             // 
-            // pictureBox5
-            // 
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
-            // 
             // lbl_stock_management
             // 
             resources.ApplyResources(this.lbl_stock_management, "lbl_stock_management");
             this.lbl_stock_management.Name = "lbl_stock_management";
             this.lbl_stock_management.Click += new System.EventHandler(this.lbl_settings_Click);
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_logout, "btn_logout");
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // btn_settings
+            // 
+            this.btn_settings.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_settings.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_settings.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_settings, "btn_settings");
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.UseVisualStyleBackColor = false;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // pictureBox6
             // 
@@ -123,23 +113,35 @@
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.TabStop = false;
             // 
-            // btn_logout
+            // pictureBox5
             // 
-            resources.ApplyResources(this.btn_logout, "btn_logout");
-            this.btn_logout.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
             // 
-            // btn_settings
+            // pictureBox4
             // 
-            resources.ApplyResources(this.btn_settings, "btn_settings");
-            this.btn_settings.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_settings.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_settings.Name = "btn_settings";
-            this.btn_settings.UseVisualStyleBackColor = false;
-            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -163,12 +165,12 @@
             this.Name = "Main";
             this.TransparencyKey = System.Drawing.SystemColors.WindowFrame;
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -38,19 +38,23 @@
             // dgv_products
             // 
             this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_products.Location = new System.Drawing.Point(22, 56);
+            this.dgv_products.Location = new System.Drawing.Point(22, 77);
             this.dgv_products.Name = "dgv_products";
             this.dgv_products.Size = new System.Drawing.Size(465, 193);
             this.dgv_products.TabIndex = 0;
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(396, 27);
+            this.btn_search.BackColor = System.Drawing.Color.White;
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(396, 29);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(91, 23);
+            this.btn_search.Size = new System.Drawing.Size(91, 21);
             this.btn_search.TabIndex = 33;
             this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // cmb_columns
@@ -72,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 261);
+            this.ClientSize = new System.Drawing.Size(509, 296);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);

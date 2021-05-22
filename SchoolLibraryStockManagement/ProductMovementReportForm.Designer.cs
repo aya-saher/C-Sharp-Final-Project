@@ -37,25 +37,29 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(407, 19);
+            this.btn_search.BackColor = System.Drawing.Color.White;
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(407, 50);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(91, 23);
+            this.btn_search.Size = new System.Drawing.Size(91, 21);
             this.btn_search.TabIndex = 37;
             this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // cmb_columns
             // 
             this.cmb_columns.FormattingEnabled = true;
-            this.cmb_columns.Location = new System.Drawing.Point(34, 23);
+            this.cmb_columns.Location = new System.Drawing.Point(34, 52);
             this.cmb_columns.Name = "cmb_columns";
             this.cmb_columns.Size = new System.Drawing.Size(134, 21);
             this.cmb_columns.TabIndex = 36;
             // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(174, 21);
+            this.txt_search.Location = new System.Drawing.Point(174, 50);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(227, 20);
             this.txt_search.TabIndex = 35;
@@ -63,7 +67,7 @@
             // dgv_products
             // 
             this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_products.Location = new System.Drawing.Point(33, 48);
+            this.dgv_products.Location = new System.Drawing.Point(33, 77);
             this.dgv_products.Name = "dgv_products";
             this.dgv_products.Size = new System.Drawing.Size(465, 193);
             this.dgv_products.TabIndex = 34;
@@ -72,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 261);
+            this.ClientSize = new System.Drawing.Size(531, 315);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.cmb_columns);
             this.Controls.Add(this.txt_search);
