@@ -14,15 +14,5 @@ namespace SchoolLibraryStockManagement.Strategy
         public abstract List<Permission> getProductManagementPermissionsOnLoad();
 
         public abstract List<Permission> getProductManagementPermissionsEditing();
-
-        //public abstract List<Permission> getCategoryManagementPermissions();
-
-        //public abstract List<Permission> getOrderManagementPermissions();
-
-        //public abstract List<Permission> getStockManagementPermissions();
-
-        //public abstract List<Permission> getReportPermissions();
-
-        //public abstract List<Permission> getUserManagementPermissions();
     }
 }
