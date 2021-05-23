@@ -164,6 +164,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Main";
             this.TransparencyKey = System.Drawing.SystemColors.WindowFrame;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

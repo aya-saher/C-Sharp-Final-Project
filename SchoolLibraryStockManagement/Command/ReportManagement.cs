@@ -92,7 +92,7 @@ namespace SchoolLibraryStockManagement.Command
         }
         public DataTable Execute()
         {
-            return _report.SearchTopSelling(_column, _value);
+            return _report.GetProductMovement(_column, _value);
         }
         public bool CanExecute()
         {

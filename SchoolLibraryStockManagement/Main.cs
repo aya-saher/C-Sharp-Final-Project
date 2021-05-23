@@ -98,5 +98,10 @@ namespace SchoolLibraryStockManagement
 
             }
         }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

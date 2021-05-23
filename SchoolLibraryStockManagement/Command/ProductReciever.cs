@@ -53,7 +53,6 @@ namespace SchoolLibraryStockManagement.Command
                quantity,
                category_id
             );
-            Console.WriteLine(query);
             DatabaseOperation.create(query);
         }
         public void Update(string id, string code, string name, string description, string price, string quantity, string category_id)

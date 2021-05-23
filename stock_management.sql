@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 05:14 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: May 23, 2021 at 05:56 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,10 +39,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `deleted_at`) VALUES
-(1, 'Test', NULL, NULL),
-(2, 'Test 2', NULL, '0000-00-00 00:00:00'),
-(3, 'test 4', '', NULL),
-(4, 'test 6', '', NULL);
+(1, 'Category 1', '', NULL),
+(2, 'Category 2', NULL, NULL),
+(3, 'Category 3', '', NULL),
+(4, 'Category 4', '', NULL),
+(5, 'Category 5', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -64,8 +64,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `reference_number`, `total`, `user_id`, `created_at`) VALUES
-(5, 545455, 835, 1, '2021-05-19 21:49:02'),
-(13, 285624, 2435, 1, '2021-05-20 17:48:20');
+(0, 0, 0, 1, '2021-05-23 03:48:14'),
+(5, 54545454, 0, 1, '2021-05-19 21:49:02'),
+(7, 471777, 22, 1, '2021-05-23 03:48:45');
 
 --
 -- Triggers `orders`
@@ -111,14 +112,9 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
-(32, 5, 3, 3, 22),
-(34, 5, 8, 1, 55),
-(35, 5, 3, 32, 22),
-(36, 5, 8, 10, 55),
-(47, 13, 8, 1, 55),
-(48, 13, 11, 69, 10),
-(49, 13, 8, 18, 55),
-(50, 13, 11, 70, 10);
+(31, 5, 1, 1, 5),
+(36, 7, 3, 1, 22),
+(37, 7, 10, 1, 0);
 
 --
 -- Triggers `order_items`
@@ -181,14 +177,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `quantity`, `price`, `category_id`, `deleted_at`) VALUES
-(1, '12345', 'Product 1', '', 11, 5, 1, '0000-00-00 00:00:00'),
+(1, '12345', 'Product 1', '', 3, 5, 1, NULL),
 (2, '544554', 'Product 2', '', 12, 10, 2, '0000-00-00 00:00:00'),
-(3, '98765', 'Product 3', '', 17, 22, 3, '0000-00-00 00:00:00'),
-(8, '111', 'jhj', '', 101, 55, 1, NULL),
-(9, '111', 'sds2', '', 10, 0, 1, NULL),
-(10, '435', 'ثقف', '', 0, 0, 2, '0000-00-00 00:00:00'),
-(11, '1233', 'sw', 'ww', -59, 10, 1, NULL),
-(12, '1234', 'product 1', '', 0, 10, 3, NULL);
+(3, '98765', 'Product 3', '', 32, 22, 1, NULL),
+(8, '111', 'Product 4', '', 10, 55, 1, '0000-00-00 00:00:00'),
+(9, '111', 'Product 5', '', 6, 0, 1, NULL),
+(10, '435', 'Product 6', '', 1, 0, 3, NULL),
+(11, '7687678', 'Product 7', '', 0, 12, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -230,87 +225,18 @@ INSERT INTO `stock_history` (`id`, `product_id`, `quantity`, `user_id`, `type`, 
 (22, 8, 5, 1, 'added', '2021-05-19 21:15:36'),
 (23, 2, 2, 1, 'added', '2021-05-19 21:15:36'),
 (24, 1, 1, 1, 'subtracted', '2021-05-19 21:52:10'),
-(25, 3, 3, 1, 'subtracted', '2021-05-19 22:19:48'),
-(26, 8, 10, 1, 'subtracted', '2021-05-19 22:19:53'),
-(27, 8, 9, 1, 'added', '2021-05-19 22:20:00'),
-(28, 8, 1, 1, 'added', '2021-05-19 22:20:02'),
-(29, 8, 1, 1, 'subtracted', '2021-05-19 22:20:07'),
-(30, 3, 0, 1, 'added', '2021-05-19 22:20:09'),
-(31, 8, 0, 1, 'added', '2021-05-19 22:20:09'),
-(32, 3, 32, 1, 'subtracted', '2021-05-19 22:20:15'),
-(33, 3, 0, 1, 'added', '2021-05-19 22:20:16'),
-(34, 1, 1, 1, 'subtracted', '2021-05-19 22:20:52'),
-(35, 1, 2, 1, 'added', '2021-05-19 22:20:59'),
-(36, 8, 10, 1, 'subtracted', '2021-05-19 22:21:30'),
-(37, 8, 0, 1, 'added', '2021-05-19 22:21:33'),
-(38, 1, 1, 1, 'subtracted', '2021-05-19 22:25:01'),
-(39, 1, 1, 1, 'subtracted', '2021-05-19 22:25:05'),
-(40, 1, 0, 1, 'added', '2021-05-19 22:25:10'),
-(41, 1, 0, 1, 'added', '2021-05-19 22:25:10'),
-(42, 1, 1, 1, 'subtracted', '2021-05-19 22:25:17'),
-(43, 1, 1, 1, 'added', '2021-05-19 22:25:21'),
-(44, 1, 1, 1, 'subtracted', '2021-05-19 22:25:24'),
-(45, 11, 5, 1, 'subtracted', '2021-05-20 13:36:51'),
-(46, 1, 0, 1, 'added', '2021-05-20 13:37:11'),
-(47, 11, 0, 1, 'added', '2021-05-20 13:37:11'),
-(48, 11, 5, 1, 'subtracted', '2021-05-20 13:37:21'),
-(49, 11, 2, 1, 'added', '2021-05-20 13:37:26'),
-(50, 11, 3, 1, 'added', '2021-05-20 13:37:28'),
-(51, 11, 5, 1, 'subtracted', '2021-05-20 13:37:38'),
-(52, 11, 5, 1, 'subtracted', '2021-05-20 13:37:44'),
-(65, 1, 10, 1, 'added', '2021-05-20 13:51:22'),
-(66, 3, 20, 1, 'added', '2021-05-20 13:51:22'),
-(67, 3, 16, 1, 'subtracted', '2021-05-20 13:51:45'),
-(68, 11, 0, 1, 'added', '2021-05-20 13:51:50'),
-(69, 11, 0, 1, 'added', '2021-05-20 13:51:50'),
-(70, 3, 0, 1, 'added', '2021-05-20 13:51:50'),
-(71, 3, 11, 1, 'added', '2021-05-20 13:52:08'),
-(72, 11, 5, 1, 'added', '2021-05-20 13:52:35'),
-(73, 1, 1, 1, 'added', '2021-05-20 13:52:44'),
-(75, 8, 20, 1, 'subtracted', '2021-05-20 17:35:21'),
-(76, 8, 18, 1, 'added', '2021-05-20 17:35:26'),
-(77, 8, 1, 1, 'subtracted', '2021-05-20 17:46:25'),
-(78, 11, 69, 1, 'subtracted', '2021-05-20 17:46:52'),
-(79, 8, 1, 1, 'added', '2021-05-20 17:47:00'),
-(80, 8, 1, 1, 'added', '2021-05-20 17:47:03'),
-(81, 8, 18, 1, 'subtracted', '2021-05-20 17:47:14'),
-(82, 11, 70, 1, 'subtracted', '2021-05-20 17:47:19'),
-(83, 8, 0, 1, 'added', '2021-05-20 17:48:20'),
-(84, 11, 0, 1, 'added', '2021-05-20 17:48:20'),
-(85, 8, 0, 1, 'added', '2021-05-20 17:48:20'),
-(86, 11, 0, 1, 'added', '2021-05-20 17:48:20'),
-(87, 8, 1, 1, 'subtracted', '2021-05-20 17:48:25'),
-(88, 8, 0, 1, 'added', '2021-05-20 17:48:27'),
-(91, 11, 5, 1, 'added', '2021-05-20 17:49:37'),
-(96, 8, 10, 1, 'subtracted', '2021-05-20 17:55:51'),
-(97, 9, 8, 1, 'subtracted', '2021-05-20 17:56:07'),
-(98, 8, 10, 1, 'added', '2021-05-20 17:56:11'),
-(99, 9, 8, 1, 'added', '2021-05-20 17:56:18'),
-(100, 8, 10, 1, 'subtracted', '2021-05-20 17:56:25'),
-(101, 9, 1, 1, 'subtracted', '2021-05-20 17:56:31'),
-(102, 9, 1, 1, 'added', '2021-05-20 17:56:35'),
-(103, 8, 9, 1, 'added', '2021-05-20 17:56:42'),
-(104, 8, 0, 1, 'added', '2021-05-20 17:56:49'),
-(110, 8, 1, 1, 'subtracted', '2021-05-20 18:03:09'),
-(112, 8, 2, 1, 'added', '2021-05-20 18:03:28'),
-(113, 11, 5, 1, 'added', '2021-05-20 18:08:33'),
-(114, 3, 5, 1, 'added', '2021-05-20 18:08:33'),
-(115, 8, 100, 1, 'subtracted', '2021-05-20 21:53:06'),
-(116, 8, 100, 1, 'added', '2021-05-20 21:53:12'),
-(117, 1, 1, 1, 'subtracted', '2021-05-20 21:53:34'),
-(118, 1, 1, 1, 'added', '2021-05-20 21:53:42'),
-(119, 1, 1, 1, 'added', '2021-05-20 21:53:56'),
-(120, 1, 1, 1, 'added', '2021-05-20 21:57:00'),
-(121, 8, 1, 1, 'added', '2021-05-20 22:09:58'),
-(122, 8, 1, 1, 'subtracted', '2021-05-20 22:13:49'),
-(123, 8, 0, 1, 'added', '2021-05-20 22:14:00'),
-(124, 8, 1, 1, 'added', '2021-05-20 22:16:11'),
-(125, 9, 10, 1, 'subtracted', '2021-05-20 22:18:33'),
-(126, 8, 101, 1, 'subtracted', '2021-05-20 22:18:51'),
-(127, 9, 10, 1, 'added', '2021-05-20 22:18:56'),
-(128, 9, 1, 1, 'subtracted', '2021-05-20 22:23:18'),
-(129, 8, 101, 1, 'added', '2021-05-20 22:30:45'),
-(130, 9, 1, 1, 'added', '2021-05-20 22:30:45');
+(25, 1, 3, 1, 'added', '2021-05-23 03:11:42'),
+(26, 9, 5, 1, 'added', '2021-05-23 03:11:42'),
+(27, 9, 1, 1, 'added', '2021-05-23 03:38:37'),
+(28, 10, 1, 1, 'added', '2021-05-23 03:38:37'),
+(29, 3, 1, 1, 'added', '2021-05-23 03:39:20'),
+(30, 10, 1, 1, 'added', '2021-05-23 03:40:19'),
+(31, 3, 33, 1, 'subtracted', '2021-05-23 03:48:25'),
+(32, 10, 2, 1, 'subtracted', '2021-05-23 03:48:31'),
+(33, 3, 32, 1, 'added', '2021-05-23 03:48:36'),
+(34, 10, 1, 1, 'added', '2021-05-23 03:48:41'),
+(35, 3, 0, 1, 'added', '2021-05-23 03:48:45'),
+(36, 10, 0, 1, 'added', '2021-05-23 03:48:45');
 
 --
 -- Triggers `stock_history`
@@ -351,10 +277,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `name`, `password`, `role`, `activated_at`, `deleted_at`) VALUES
-(1, 'aya', 'aya', 'aya', 'super_admin', '2021-05-05 05:28:01', '2021-05-05 05:28:01'),
-(2, 'aya_', 'aya', 'aya', 'super_admin', '2021-05-21 17:07:19', '0000-00-00 00:00:00'),
-(3, 'aya__', 'aya', '12345678', 'super_admin', '2021-05-21 17:09:32', '0000-00-00 00:00:00'),
-(4, 'aya', 'aya', '12345678', 'super_admin', '2021-05-21 18:43:12', '0000-00-00 00:00:00');
+(1, 'super_admin', 'Aya', 'secret', 'super_admin', '2021-05-05 05:28:01', NULL),
+(4, 'israa', 'israa', 'secret', 'sales_employee', '2021-05-21 20:31:03', NULL),
+(5, 'jannat', 'jannat', 'secre', 'warehouse_employee', '2021-05-23 02:54:20', NULL);
 
 --
 -- Indexes for dumped tables
@@ -410,37 +335,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `stock_history`
 --
 ALTER TABLE `stock_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

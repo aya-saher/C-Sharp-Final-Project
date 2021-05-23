@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolLibraryStockManagement.Models
 {
-    class StockManagement
+    public class StockManagement
     {
         public string product_id;
         public int quantity;
@@ -20,7 +20,7 @@ namespace SchoolLibraryStockManagement.Models
             this.user_id = user_id;
         }
 
-        public string add(List<StockManagement> stock)
+        public string insert(List<StockManagement> stock)
         {
             string query = "INSERT INTO stock_history(product_id, quantity, user_id) VALUES";
             foreach(StockManagement item in stock){

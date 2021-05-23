@@ -24,7 +24,7 @@ namespace SchoolLibraryStockManagement.Command
     {
         return true;
     }
-    }
+   }
     public class GetProductsHasQuantity : ICommand2
     {
         private readonly IProduct _product;

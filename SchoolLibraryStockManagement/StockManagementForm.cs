@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SchoolLibraryStockManagement.Libraries;
+using SchoolLibraryStockManagement.Command;
+using SchoolLibraryStockManagement.Factory;
 using SchoolLibraryStockManagement.Models;
 
 namespace SchoolLibraryStockManagement
@@ -17,6 +19,9 @@ namespace SchoolLibraryStockManagement
         List<StockManagement> stock = new List<StockManagement>();
         string selected_product_id;
         int selected_index;
+        private readonly IProduct _product = new IProductReciever();
+        private readonly IStock _stock = new IStockReciever();
+        Invoker _invoker = new Invoker();
 
         public StockManagementForm()
         {
@@ -25,7 +30,7 @@ namespace SchoolLibraryStockManagement
 
         private void StockManagementForm_Load(object sender, EventArgs e)
         {
-            dgv_products.DataSource = DatabaseOperation.get(new DataTable(), new Product().all());
+            dgv_products.DataSource = _invoker.Invoke(new GetAllProducts(_product));
 
             disableFields(false, false, false);
 
@@ -63,8 +68,12 @@ namespace SchoolLibraryStockManagement
         {
             disableFields(false, false, false);
 
-            DatabaseOperation.create(new StockManagement().add(stock));
+            _invoker.Invoke(new InsertStock(_stock, stock));
+            //DatabaseOperation.create(new StockManagement().add(stock));
             MessageBox.Show("Quantities Added Successfully!");
+
+            stock.Clear();
+            dgv_stock.Rows.Clear();
         }
 
         private void dgv_stock_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
