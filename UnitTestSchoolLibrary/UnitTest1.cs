@@ -16,7 +16,7 @@ namespace UnitTestSchoolLibrary
 
             //Act
             bool result;
-            if (new InsertOrderItem(orderItem, "0", "1", "1", "5", 6).CanExecute())
+            if (new InsertOrderItem(orderItem, "0", "0", "1", "5", 6).CanExecute())
             {
                 result = new InsertOrder(orderItem, order, "0", "1").CanExecute();
             }
@@ -36,7 +36,7 @@ namespace UnitTestSchoolLibrary
 
             //Act
             bool result = false;
-            if (new InsertOrderItem(orderItem, "0", "1", ".", "5", 6).CanExecute())
+            if (new InsertOrderItem(orderItem, "0", "0", ".", "5", 6).CanExecute())
             {
                 result = true;
             }
@@ -53,7 +53,7 @@ namespace UnitTestSchoolLibrary
 
             //Act
             bool result = false;
-            if (new InsertOrderItem(orderItem, "0", "1", "0", "10", 6).CanExecute())
+            if (new InsertOrderItem(orderItem, "0", "0", "0", "10", 6).CanExecute())
             {
                 result = true;
             }
@@ -69,7 +69,7 @@ namespace UnitTestSchoolLibrary
 
             //Act
             bool result = false;
-            if (new InsertOrderItem(orderItem, "0", "1", "1000", "10", 6).CanExecute())
+            if (new InsertOrderItem(orderItem, "0", "0", "1000", "10", 6).CanExecute())
             {
                 result = true;
             }
@@ -85,7 +85,7 @@ namespace UnitTestSchoolLibrary
 
             //Act
             bool result = false;
-            if (new InsertOrderItem(orderItem, "0", "1", "", "10", 6).CanExecute())
+            if (new InsertOrderItem(orderItem, "0", "0", "", "10", 6).CanExecute())
             {
                 result = true;
             }

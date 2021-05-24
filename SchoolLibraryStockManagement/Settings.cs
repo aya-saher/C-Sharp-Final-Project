@@ -51,7 +51,7 @@ namespace SchoolLibraryStockManagement
 
         private void Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
-            new Main(user).Show();
+            //new Main(user).Show();
         }
     }
 }

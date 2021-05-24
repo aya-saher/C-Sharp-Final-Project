@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2021 at 05:56 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: May 23, 2021 at 01:15 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -43,7 +44,9 @@ INSERT INTO `categories` (`id`, `name`, `description`, `deleted_at`) VALUES
 (2, 'Category 2', NULL, NULL),
 (3, 'Category 3', '', NULL),
 (4, 'Category 4', '', NULL),
-(5, 'Category 5', '', NULL);
+(5, 'Category 5', '', NULL),
+(6, 'test1', 'testing', NULL),
+(7, 'cat1233', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -64,9 +67,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `reference_number`, `total`, `user_id`, `created_at`) VALUES
-(0, 0, 0, 1, '2021-05-23 03:48:14'),
+(0, 123, 0, 1, '2021-05-23 11:11:14'),
 (5, 54545454, 0, 1, '2021-05-19 21:49:02'),
-(7, 471777, 22, 1, '2021-05-23 03:48:45');
+(7, 471778, 0, 1, '2021-05-23 03:48:45');
 
 --
 -- Triggers `orders`
@@ -113,8 +116,8 @@ CREATE TABLE `order_items` (
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
 (31, 5, 1, 1, 5),
-(36, 7, 3, 1, 22),
-(37, 7, 10, 1, 0);
+(37, 7, 10, 1, 0),
+(43, 0, 1, 3, 5);
 
 --
 -- Triggers `order_items`
@@ -177,13 +180,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `code`, `name`, `description`, `quantity`, `price`, `category_id`, `deleted_at`) VALUES
-(1, '12345', 'Product 1', '', 3, 5, 1, NULL),
+(1, '12345', 'Product 1', '', 0, 5, 1, NULL),
 (2, '544554', 'Product 2', '', 12, 10, 2, '0000-00-00 00:00:00'),
-(3, '98765', 'Product 3', '', 32, 22, 1, NULL),
+(3, '5555', 'Product 3', '', 33, 22, 1, NULL),
 (8, '111', 'Product 4', '', 10, 55, 1, '0000-00-00 00:00:00'),
-(9, '111', 'Product 5', '', 6, 0, 1, NULL),
+(9, '111', 'Product 5', '', 13, 0, 1, NULL),
 (10, '435', 'Product 6', '', 1, 0, 3, NULL),
-(11, '7687678', 'Product 7', '', 0, 12, 1, NULL);
+(11, '7687678', 'Product 7', '', 0, 12, 1, NULL),
+(12, '1221', 'Product 8', '', 0, 55, 3, '0000-00-00 00:00:00'),
+(13, 'code 77', 'test 77', 'testing', 0, -67, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -236,7 +241,20 @@ INSERT INTO `stock_history` (`id`, `product_id`, `quantity`, `user_id`, `type`, 
 (33, 3, 32, 1, 'added', '2021-05-23 03:48:36'),
 (34, 10, 1, 1, 'added', '2021-05-23 03:48:41'),
 (35, 3, 0, 1, 'added', '2021-05-23 03:48:45'),
-(36, 10, 0, 1, 'added', '2021-05-23 03:48:45');
+(36, 10, 0, 1, 'added', '2021-05-23 03:48:45'),
+(37, 1, 2, 1, 'subtracted', '2021-05-23 09:10:24'),
+(38, 3, 2, 1, 'subtracted', '2021-05-23 09:10:32'),
+(39, 3, 1, 1, 'added', '2021-05-23 09:10:38'),
+(40, 3, 1, 1, 'added', '2021-05-23 09:10:43'),
+(41, 1, 0, 1, 'added', '2021-05-23 09:10:50'),
+(42, 1, 2, 1, 'added', '2021-05-23 09:11:16'),
+(43, 3, 1, 1, 'subtracted', '2021-05-23 09:11:24'),
+(44, 3, 2, 1, 'added', '2021-05-23 09:11:28'),
+(45, 10, 1, 1, 'subtracted', '2021-05-23 09:11:36'),
+(46, 10, 1, 1, 'added', '2021-05-23 09:11:39'),
+(47, 9, 2, 1, 'added', '2021-05-23 10:53:03'),
+(48, 9, 5, 1, 'added', '2021-05-23 10:53:03'),
+(49, 1, 3, 1, 'subtracted', '2021-05-23 11:11:33');
 
 --
 -- Triggers `stock_history`
@@ -279,7 +297,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `name`, `password`, `role`, `activated_at`, `deleted_at`) VALUES
 (1, 'super_admin', 'Aya', 'secret', 'super_admin', '2021-05-05 05:28:01', NULL),
 (4, 'israa', 'israa', 'secret', 'sales_employee', '2021-05-21 20:31:03', NULL),
-(5, 'jannat', 'jannat', 'secre', 'warehouse_employee', '2021-05-23 02:54:20', NULL);
+(5, 'jannat', 'jannat', 'secre', 'super_admin', '2021-05-23 02:54:20', NULL);
 
 --
 -- Indexes for dumped tables
@@ -335,31 +353,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `stock_history`
 --
 ALTER TABLE `stock_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `users`

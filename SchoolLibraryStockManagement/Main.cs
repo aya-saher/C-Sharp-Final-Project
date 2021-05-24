@@ -76,9 +76,9 @@ namespace SchoolLibraryStockManagement
 
         private void btn_settings_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             new Settings(user).ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
         private void Main_Load(object sender, EventArgs e)

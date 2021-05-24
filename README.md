@@ -6,26 +6,88 @@ This project is the Final Project for (Visual Programming 2) Subject ` 2021-05-2
 * [Technologies](#technologies)
 * [Design Patterns](#design-patterns)
 * [Features](#features)
+* [Credentials](#credentials)
+* [Notes](#notes)
+* [Permissions](#permissions)
 * [Team](#team)
 
 # Requirements
 1. Microsoft Vistal Studio
+2. MySQL Driver
 
 # Technologies
 * C#
 
 # Design Patterns
-* Design Pattern 1 (Usage Porpuse)
-* Design Pattern 2 (Usage Porpuse)
+* Singleton (Database Connection)
+* Command (Database Queries)
+* Factory + Strategy (User Authentication)
 
 # Features
 * Use __MVC__ Design Pattern
-* Feature 1
-    * Step 1
-    * Step 2
-* Feature 2
-    * Step 1
-    * Step 2
+* Authentication
+    * Login
+    * Logout
+* User Management
+    * Show All Users
+    * Add New User (Includes specifying the Role)
+    * Edit User
+    * Delete User
+    * Search
+* Product Management
+    * Show All Products
+    * Add New Product (Quantity Not Involved Here)
+    * Edit Product
+    * Delete Product
+    * Search
+* Category Management
+    * Show All Categories
+    * Add New Category
+    * Edit Category
+    * Delete Category
+    * Search
+* Stock Management
+    * Inert Quantities to Many Products
+* Order Management
+    * Show All Orders
+    * Add New Order
+    * Edit Order
+    * Delete Order
+    * Search
+* Reports
+    * Product Movement Report
+    * Out of Stock
+    * Top Selling
+* Settings
+    * User Can Edit his own Data
+
+# Credentials
+* Super Admin:
+    * Username: super_admin
+    * Password: secret
+* Sales Employee:
+    * Username: israa
+    * Password: secret
+* Warehouse Employee:
+    * Username: jannat
+    * Password: secret
+    
+# Notes
+* There are 3 Types of User (Super Admin - Sales Employee - Warehouse Employee)
+* There is Unit Testing (for Insert New Order)
+* There are 5 DB Triggers
+* Depending on User Role Some Features either be Enabled or Disabled
+
+# Permissions
+* Super Admin:
+    * Can do Anything
+* Sales Employee:
+    * Show All Products
+    * Order Management
+* Warehouse Employee:
+    * product Management
+    * Stock Management
+    * Category Management
 
 # Team
 Aya Kamal         © 2021 | bd58296@gmail.com
